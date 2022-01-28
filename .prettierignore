@@ -1,0 +1,14 @@
+.next/
+**/node_modules/
+**/public/
+.prettierrc
+README.md
+**/postcss.config.js
+tsconfig.json
+next-env.d.ts
+package.json
+.eslintrc
+.husky/
+.github/
+.jest/
+jest.config.js
