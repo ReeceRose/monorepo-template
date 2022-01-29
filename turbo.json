@@ -8,6 +8,10 @@
       "cache": false,
       "outputs": ["coverage/**"]
     },
+    "test:watch": {
+      "cache": false,
+      "outputs": ["coverage/**"]
+    },
     "lint": {
       "outputs": []
     },
