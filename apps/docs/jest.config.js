@@ -5,7 +5,7 @@ module.exports = {
     '^@/components/(.*)$': '<rootDir>/components/$1',
     '^@/pages/(.*)$': '<rootDir>/pages/$1',
     '^@/layouts/(.*)$': '<rootDir>/layouts/$1',
-    '^@/shared/(.*)$': '<rootDir>/node_modules/ui/$1',
+    '^@/shared/(.*)$': '<rootDir>/../../packages/ui/$1',
   },
   setupFiles: ['<rootDir>/.jest/setEnvVars.js'],
   setupFilesAfterEnv: ['<rootDir>/.jest/setupTests.js'],
