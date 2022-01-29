@@ -1,4 +1,4 @@
-import { Button } from 'ui';
+import { Button } from '@/shared/Components/';
 
 export default function Web() {
   return (
