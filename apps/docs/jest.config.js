@@ -5,7 +5,7 @@ module.exports = {
     '^@/components/(.*)$': '<rootDir>/components/$1',
     '^@/pages/(.*)$': '<rootDir>/pages/$1',
     '^@/layouts/(.*)$': '<rootDir>/layouts/$1',
-    '^ui/(.*)$': '<rootDir>/node_modules/ui/$1'
+    '^ui/(.*)$': '<rootDir>/../../packages/ui/$1'
   },
   modulePaths: [
     "<rootDir>"
