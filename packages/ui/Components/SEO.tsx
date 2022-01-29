@@ -3,11 +3,10 @@ import Head from 'next/head';
 type Props = {
   title: string;
   description: string;
+  siteURL: string;
 };
 
-const SEO: React.FC<Props> = ({ title, description }) => {
-  const siteURL = process.env.SITE_URL;
-
+export const SEO = ({ title, description, siteURL }: Props) => {
   return (
     <Head>
       <title>{title}</title>
@@ -73,5 +72,3 @@ const SEO: React.FC<Props> = ({ title, description }) => {
     </Head>
   );
 };
-
-export default SEO;

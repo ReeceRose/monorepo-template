@@ -1,10 +1,13 @@
-import { Button } from '@/shared/Components/';
+import { SEO } from '@/shared/components';
 
-export default function Web() {
+export default function Home(): JSX.Element {
   return (
     <div>
-      <h1>Web</h1>
-      <Button />
+      <SEO
+        title="CHANGE_ME"
+        description="CHANGE_ME"
+        siteURL={process.env.SITE_URL || 'https://localhost:3000'}
+      />
     </div>
   );
 }
