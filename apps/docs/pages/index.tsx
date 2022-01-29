@@ -1,4 +1,4 @@
-import { SEO } from '@/shared/components';
+import { SEO } from 'ui/components';
 
 export default function Home(): JSX.Element {
   return (

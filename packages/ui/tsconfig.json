@@ -6,5 +6,5 @@
       "@/components/*": ["components/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "include": ["**/*.ts", "**/*.tsx"]
 }

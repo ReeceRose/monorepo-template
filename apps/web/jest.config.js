@@ -4,8 +4,7 @@ module.exports = {
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
     '^@/components/(.*)$': '<rootDir>/components/$1',
     '^@/pages/(.*)$': '<rootDir>/pages/$1',
-    '^@/layouts/(.*)$': '<rootDir>/layouts/$1',
-    '^@/shared/(.*)$': '<rootDir>/../../packages/ui/$1',
+    '^@/layouts/(.*)$': '<rootDir>/layouts/$1'
   },
   setupFiles: ['<rootDir>/.jest/setEnvVars.js'],
   setupFilesAfterEnv: ['<rootDir>/.jest/setupTests.js'],

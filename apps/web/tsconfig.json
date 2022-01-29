@@ -6,8 +6,7 @@
       "@/components/*": ["components/*"],
       "@/pages/*": ["pages/*"],
       "@/styles/*": ["styles/*"],
-      "@/layouts/*": ["layouts/*"],
-      "@/shared/*": ["node_modules/ui/*"]
+      "@/layouts/*": ["layouts/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
