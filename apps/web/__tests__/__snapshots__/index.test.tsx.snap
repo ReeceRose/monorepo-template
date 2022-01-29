@@ -7,7 +7,7 @@ exports[`Index page tests Index page matches snapshot 1`] = `
       Web
     </h1>
     <button
-      class="text-xl "
+      class="text-xl"
     >
       Boop
     </button>
