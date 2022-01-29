@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { SEO } from '../../components/SEO';
+import { SEO } from '../../components';
 
 jest.mock('next/head', () => {
   return {
