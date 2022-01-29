@@ -4,7 +4,6 @@ File to track progress on things to add/change about the project.
 
 ### Todo
 
-- [ ] Modify tsconfig packages to match [next.js-template](https://github.com/reeceRose/next.js-template)
 - [ ] Add ability to run tests.
 - [ ] Add tailwind.
   - [ ] Add tailwind.config.js to the ui package, other applications to inherit from this (maybe?).
@@ -22,3 +21,4 @@ File to track progress on things to add/change about the project.
 - [x] Add common settings to .vscode/settings.json
 - [x] Add husky support for pre-commit verification.
 - [x] Add an empty mobile, android, and ios application folder
+- [x] Modify tsconfig packages to match [next.js-template](https://github.com/reeceRose/next.js-template)
