@@ -11,6 +11,7 @@
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "type-check": "turbo run type-check",
     "test": "turbo run test",
     "test:watch": "turbo run test:watch",
     "test:write": "turbo run test -u",
