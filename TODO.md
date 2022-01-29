@@ -4,10 +4,6 @@ File to track progress on things to add/change about the project.
 
 ### Todo
 
-- [ ] Add ability to run tests.
-- [ ] Add tailwind.
-  - [ ] Add tailwind.config.js to the ui package, other applications to inherit from this (maybe?).
-- [ ] Try to extract next.config.js.
 - [ ] Add a basic HTTP REST API application
 - [ ] Add a basic graphql application
 - [ ] Replace docs/web applications with [next.js-templates](<[https://](https://github.com/reeceRose/next.js-template)>)
@@ -22,3 +18,6 @@ File to track progress on things to add/change about the project.
 - [x] Add husky support for pre-commit verification.
 - [x] Add an empty mobile, android, and ios application folder
 - [x] Modify tsconfig packages to match [next.js-template](https://github.com/reeceRose/next.js-template)
+- [x] Add tailwind.
+  - [x] Add tailwind.config.js to the config package, other applications to inherit from this (maybe?).
+- [x] Add ability to run tests.
