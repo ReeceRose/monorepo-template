@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SEO component matches snapshot 1`] = `
+<DocumentFragment>
+  <title>
+    SEO Test
+  </title>
+  <meta
+    content="SEO Test"
+    property="og:title"
+  />
+  <meta
+    content="SEO Test"
+    name="twitter:title"
+  />
+  <meta
+    content="This is a test description"
+    name="description"
+  />
+  <meta
+    content="This is a test description"
+    name="twitter:description"
+  />
+  <meta
+    content="This is a test description"
+    name="og:description"
+  />
+  <meta
+    content="@CHANGE_ME"
+    name="twitter:creator"
+  />
+  <meta
+    content="summary_large_image"
+    name="twitter:card"
+  />
+  <meta
+    content="website"
+    property="og:type"
+  />
+  <meta
+    content="http://localhost:3000/images/logo.png"
+    property="og:image"
+  />
+  <meta
+    content="http://localhost:3000/images/logo.png"
+    name="twitter:image"
+  />
+  <link
+    href="/favicon.ico"
+    rel="shortcut icon"
+    type="image/x-icon"
+  />
+  <link
+    href="/favicon-32x32.png"
+    rel="icon"
+    sizes="32x32"
+  />
+  <link
+    href="/favicon-16x16.png"
+    rel="icon"
+    sizes="16x16"
+  />
+  <link
+    href="/images/apple-touch-icon.png"
+    rel="apple-touch-icon"
+  />
+  <link
+    href="/images//apple-touch-icon-57x57.png"
+    rel="apple-touch-icon"
+    sizes="57x57"
+  />
+  <link
+    href="/images//apple-touch-icon-72x72.png"
+    rel="apple-touch-icon"
+    sizes="72x72"
+  />
+  <link
+    href="/images//apple-touch-icon-76x76.png"
+    rel="apple-touch-icon"
+    sizes="76x76"
+  />
+  <link
+    href="/images//apple-touch-icon-114x114.png"
+    rel="apple-touch-icon"
+    sizes="114x114"
+  />
+  <link
+    href="/images//apple-touch-icon-120x120.png"
+    rel="apple-touch-icon"
+    sizes="120x120"
+  />
+  <link
+    href="/images//apple-touch-icon-144x144.png"
+    rel="apple-touch-icon"
+    sizes="144x144"
+  />
+  <link
+    href="/images//apple-touch-icon-152x152.png"
+    rel="apple-touch-icon"
+    sizes="152x152"
+  />
+  <link
+    href="/images//apple-touch-icon-180x180.png"
+    rel="apple-touch-icon"
+    sizes="180x180"
+  />
+</DocumentFragment>
+`;

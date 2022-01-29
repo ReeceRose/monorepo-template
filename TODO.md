@@ -5,6 +5,7 @@ File to track progress on things to add/change about the project.
 ### Todo
 
 - [ ] Add a basic HTTP REST API application
+- [ ] Add type checking
 - [ ] Add a basic graphql application
 - [ ] Replace docs/web applications with [next.js-templates](<[https://](https://github.com/reeceRose/next.js-template)>)
 - [ ] Add docker-compose.
