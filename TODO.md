@@ -7,7 +7,6 @@ File to track progress on things to add/change about the project.
 
 - [ ] Modify tsconfig packages to match [next.js-template](https://github.com/reeceRose/next.js-template)
 - [ ] Add ability to run tests.
-- [ ] Add GitHub actions
 - [ ] Add husky support for pre-commit verification.
 - [ ] Add tailwind.
   - [ ] Add tailwind.config.js to the ui package, other applications to inherit from this (maybe?).
@@ -24,3 +23,5 @@ File to track progress on things to add/change about the project.
 ### Done ✓
 
 - [x] Add prettier  
+- [X] Add GitHub actions
+- [X] Add common settings to .vscode/settings.json
