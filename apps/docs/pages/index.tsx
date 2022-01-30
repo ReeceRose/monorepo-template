@@ -1,4 +1,4 @@
-import { SEO } from 'ui/components';
+import { SEO } from 'ui/components/SEO';
 
 export default function Home(): JSX.Element {
   return (
