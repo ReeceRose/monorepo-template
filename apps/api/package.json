@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "ts-node-dev index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "lint": "eslint"
   },
   "dependencies": {
     "express": "^4.17.2"
