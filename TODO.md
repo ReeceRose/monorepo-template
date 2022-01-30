@@ -5,8 +5,7 @@ File to track progress on things to add/change about the project.
 ### Todo
 
 - [ ] Add a basic HTTP REST API application
-- [ ] Add type checking
-- [ ] Add docker-compose.
+- [ ] Add a basic graphql application
 - [ ] Update README file once completed.
 
 ### Done ✓
@@ -21,4 +20,4 @@ File to track progress on things to add/change about the project.
   - [x] Add tailwind.config.js to the config package, other applications to inherit from this (maybe?).
 - [x] Add ability to run tests.
 - [x] Replace docs/web applications with [next.js-templates](<[https://](https://github.com/reeceRose/next.js-template)>)
-- [x] Add a basic graphql application
+- [x] Add type checking.
