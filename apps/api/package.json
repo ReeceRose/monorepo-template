@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "ts-node-dev index.ts",
+    "dev": "ts-node-dev src/server.ts",
     "build": "tsc",
     "lint": "eslint",
     "type-check": "tsc --project tsconfig.json --noEmit"

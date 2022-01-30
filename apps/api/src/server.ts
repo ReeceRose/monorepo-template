@@ -6,5 +6,5 @@ const PORT = process.env.PORT || 3002;
 app.get('/', (_: Request, res: Response) => res.send({ hello: 'world' }));
 
 app.listen(PORT, () => {
-  console.log(`⚡️[server]: Server is running at https://localhost:${PORT}`);
+  console.log(`🚀 Express server started at https://localhost:${PORT}`);
 });

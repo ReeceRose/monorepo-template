@@ -11,5 +11,5 @@ void server.listen(PORT, (error: unknown) => {
     throw error;
   }
 
-  console.log(`🚀 Server started at https://localhost:${PORT}`);
+  console.log(`🚀 GraphQL server started at https://localhost:${PORT}`);
 });
