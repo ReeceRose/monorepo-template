@@ -13,10 +13,12 @@ coverage
 out/
 build
 
+# ts/js
+tsconfig.tsbuildinfo
+
 # misc
 .DS_Store
 *.pem
-tsconfig.tsbuildinfo
 
 # debug
 npm-debug.log*

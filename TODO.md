@@ -4,7 +4,6 @@ File to track progress on things to add/change about the project.
 
 ### Todo
 
-- [ ] Add a basic HTTP REST API application
 - [ ] Add a basic graphql application
 - [ ] Update README file once completed.
 
@@ -21,3 +20,4 @@ File to track progress on things to add/change about the project.
 - [x] Add ability to run tests.
 - [x] Replace docs/web applications with [next.js-templates](<[https://](https://github.com/reeceRose/next.js-template)>)
 - [x] Add type checking.
+- [x] Add a basic HTTP REST API application
