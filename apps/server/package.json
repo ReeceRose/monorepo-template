@@ -1,6 +1,8 @@
 {
-  "name": "graphql",
+  "name": "server",
   "version": "0.1.0",
+  "private": true,
+  "type": "module",
   "scripts": {
     "dev": "ts-node-dev src/server.ts",
     "build": "tsc",
@@ -8,11 +10,10 @@
     "type-check": "tsc --project tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@pothos/core": "^3.1.1",
-    "apollo-server": "^3.6.2",
-    "graphql": "^16.3.0"
+    "express": "^4.17.2"
   },
   "devDependencies": {
+    "@types/express": "^4.17.13",
     "@types/node": "^17.0.13",
     "@typescript-eslint/eslint-plugin": "^5.10.1",
     "@typescript-eslint/parser": "^5.10.1",
