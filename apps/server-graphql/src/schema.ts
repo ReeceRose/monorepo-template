@@ -1,67 +1,17 @@
+import { v4 as uuidv4 } from 'uuid';
+
 import { builder } from './builder';
-import { Comments, IComment, IPost, IUser, Posts, Users } from './data';
+import { ITodo } from 'lib/types';
 
-export const User = builder.objectRef<IUser>('User');
-export const Post = builder.objectRef<IPost>('Post');
-export const Comment = builder.objectRef<IComment>('Comment');
+export const Todo = builder.objectRef<ITodo>('Todo');
 
-User.implement({
+const TodoItems = new Array<ITodo>();
+
+Todo.implement({
   fields: (t) => ({
-    id: t.exposeID('id'),
-    firstName: t.exposeString('firstName'),
-    lastName: t.exposeString('lastName'),
-    fullName: t.string({
-      resolve: (user) => `${user.firstName} ${user.lastName}`,
-    }),
-    posts: t.field({
-      type: [Post],
-      resolve: (user) =>
-        [...Posts.values()].filter((post) => post.authorId === user.id),
-    }),
-    comments: t.field({
-      type: [Comment],
-      resolve: (user) =>
-        [...Comments.values()].filter(
-          (comment) => comment.authorId === user.id
-        ),
-    }),
-  }),
-});
-
-Post.implement({
-  fields: (t) => ({
-    id: t.exposeID('id'),
-    title: t.exposeString('title'),
-    content: t.exposeString('content'),
-    author: t.field({
-      type: User,
-      nullable: true,
-      resolve: (post) => Users.get(post.id),
-    }),
-    comments: t.field({
-      type: [Comment],
-      resolve: (user) =>
-        [...Comments.values()].filter(
-          (comment) => comment.authorId === user.id
-        ),
-    }),
-  }),
-});
-
-Comment.implement({
-  fields: (t) => ({
-    id: t.exposeID('id'),
-    comment: t.exposeString('comment'),
-    author: t.field({
-      type: User,
-      nullable: true,
-      resolve: (comment) => Users.get(comment.id),
-    }),
-    post: t.field({
-      type: Post,
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      resolve: (comment) => Posts.get(comment.id)!,
-    }),
+    uuid: t.exposeString('uuid'),
+    description: t.exposeString('description'),
+    completed: t.exposeBoolean('completed'),
   }),
 });
 
@@ -69,34 +19,69 @@ const DEFAULT_PAGE_SIZE = 10;
 
 builder.queryType({
   fields: (t) => ({
-    post: t.field({
-      type: Post,
-      nullable: true,
-      args: {
-        id: t.arg.id({ required: true }),
-      },
-      resolve: (_, args) => Posts.get(String(args.id)),
-    }),
-    posts: t.field({
-      type: [Post],
-      nullable: true,
+    todo: t.field({
+      type: [Todo],
       args: {
         take: t.arg.int(),
         skip: t.arg.int(),
       },
       resolve: (_, args) =>
-        [...Posts.values()].slice(
+        [...TodoItems.filter((i) => !i.completed).values()].slice(
           args.skip ?? 0,
           args.take ?? DEFAULT_PAGE_SIZE
         ),
     }),
-    user: t.field({
-      type: User,
-      nullable: true,
+  }),
+});
+
+const InsertTodo = builder.inputType('InsertTodoItem', {
+  fields: (t) => ({
+    description: t.string({ required: true }),
+  }),
+});
+
+const UpdateTodo = builder.inputType('UpdateTodoItem', {
+  fields: (t) => ({
+    uuid: t.string({ required: true }),
+    description: t.string(),
+    completed: t.boolean(),
+  }),
+});
+
+builder.mutationType({
+  fields: (t) => ({
+    insertTodo: t.field({
+      type: Todo,
       args: {
-        id: t.arg.id({ required: true }),
+        input: t.arg({ type: InsertTodo, required: true }),
       },
-      resolve: (_, args) => Users.get(String(args.id)),
+      resolve: (_, args) => {
+        const item = {
+          uuid: uuidv4(),
+          description: args.input.description,
+          completed: false,
+        };
+        TodoItems.push(item);
+        return item;
+      },
+    }),
+    updateTodo: t.field({
+      type: Todo,
+      args: {
+        input: t.arg({ type: UpdateTodo, required: true }),
+      },
+      resolve: (_, args) => {
+        const item = TodoItems.find((i) => i.uuid == args.input.uuid);
+        if (item) {
+          item.completed = args.input.completed || item.completed;
+          item.description = args.input.description || item.description;
+        } else {
+          throw new Error(
+            `uuid of ${args.input.uuid} does not match an existing uuid`
+          );
+        }
+        return item;
+      },
     }),
   }),
 });
