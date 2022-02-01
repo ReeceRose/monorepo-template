@@ -1,18 +1,20 @@
 import express from 'express';
-import { ApolloServer } from 'apollo-server-express';
+import { graphqlHTTP } from 'express-graphql';
 
 import { schema } from './schema';
 
 const app = express();
 
-const apolloServer = new ApolloServer({
-  schema,
-});
+app.use(
+  '/graphql',
+  graphqlHTTP({
+    schema: schema,
+    graphiql: true,
+  })
+);
 
 const PORT = process.env.PORT || 3003;
 
-app.listen(PORT, async () => {
-  await apolloServer.start();
-  apolloServer.applyMiddleware({ app });
+app.listen(PORT, () => {
   console.log(`🚀 GraphQL server started at https://localhost:${PORT}`);
 });
