@@ -26,7 +26,7 @@ builder.queryType({
         skip: t.arg.int(),
       },
       resolve: (_, args) =>
-        [...TodoItems.filter((i) => !i.completed).values()].slice(
+        [...TodoItems.values()].slice(
           args.skip ?? 0,
           args.take ?? DEFAULT_PAGE_SIZE
         ),

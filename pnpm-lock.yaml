@@ -85,18 +85,23 @@ importers:
       '@types/node': ^17.0.13
       '@typescript-eslint/eslint-plugin': ^5.10.1
       '@typescript-eslint/parser': ^5.10.1
+      body-parser: ^1.19.1
       config: workspace:*
       eslint: ^8.8.0
       eslint-config-prettier: ^8.3.0
       eslint-plugin-prettier: ^4.0.0
       express: ^4.17.2
+      lib: workspace:*
       prettier: ^2.5.1
       ts-node: ^10.4.0
       ts-node-dev: ^1.1.8
       tsconfig: workspace:*
       typescript: ^4.5.5
+      uuid: ^8.3.2
     dependencies:
+      body-parser: 1.19.1
       express: 4.17.2
+      uuid: 8.3.2
     devDependencies:
       '@types/express': 4.17.13
       '@types/node': 17.0.13
@@ -106,6 +111,7 @@ importers:
       eslint: 8.8.0
       eslint-config-prettier: 8.3.0_eslint@8.8.0
       eslint-plugin-prettier: 4.0.0_43197c8d12d1d439034cfcf65e1c48c2
+      lib: link:../../packages/lib
       prettier: 2.5.1
       ts-node: 10.4.0_40146b36d18138e3202fbb722e5f65e4
       ts-node-dev: 1.1.8_typescript@4.5.5
