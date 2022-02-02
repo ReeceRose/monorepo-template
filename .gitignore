@@ -24,6 +24,10 @@ tmp/
 .DS_Store
 *.pem
 
+# prisma
+dev.db
+dev.db-journal
+
 # debug
 npm-debug.log*
 yarn-debug.log*

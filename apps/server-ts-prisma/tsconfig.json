@@ -1,0 +1,14 @@
+{
+  "extends": "tsconfig/base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "strict": true,
+    "skipLibCheck": true,
+    "module": "CommonJS",
+    "esModuleInterop": true,
+    "outDir": "build"
+  },
+  "include": [
+    "src/**/*"
+  ]  
+}

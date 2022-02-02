@@ -1,22 +1,21 @@
 {
-  "name": "server",
+  "name": "server-ts-prisma",
   "version": "0.1.0",
-  "private": true,
-  "type": "module",
   "scripts": {
     "dev": "ts-node-dev src/server.ts",
     "build": "tsc",
     "lint": "eslint",
+    "generate": "pnpx prisma generate",
     "type-check": "tsc --project tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@prisma/client": "^3.9.0",
     "body-parser": "^1.19.1",
-    "express": "^4.17.2",
-    "uuid": "^8.3.2"
+    "express": "^4.17.2"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
-    "@types/node": "^17.0.13",
+    "@types/node": "^17.0.14",
     "@typescript-eslint/eslint-plugin": "^5.10.1",
     "@typescript-eslint/parser": "^5.10.1",
     "config": "workspace:*",
@@ -25,6 +24,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "lib": "workspace:*",
     "prettier": "^2.5.1",
+    "ts-node": "^10.4.0",
     "ts-node-dev": "^1.1.8",
     "tsconfig": "workspace:*",
     "typescript": "^4.5.5"

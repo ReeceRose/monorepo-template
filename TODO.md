@@ -4,8 +4,6 @@ File to track progress on things to add/change about the project.
 
 ### Todo
 
-- [ ] Add prisma support.
-- [ ] Add golang examples.
 - [ ] Update README file once completed (project setup, install air, etc.).
 
 ### Done ✓
@@ -24,3 +22,5 @@ File to track progress on things to add/change about the project.
 - [x] Add a basic HTTP REST API application
 - [x] Add a basic graphql application
 - [x] Make server projects share same lib and have more similar APIs.
+- [x] Add golang examples.
+- [x] Add prisma support/example.
