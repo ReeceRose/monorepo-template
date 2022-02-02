@@ -9,7 +9,7 @@ const TodoItems = new Array<ITodo>();
 
 Todo.implement({
   fields: (t) => ({
-    uuid: t.exposeString('uuid'),
+    id: t.exposeString('id'),
     description: t.exposeString('description'),
     completed: t.exposeBoolean('completed'),
   }),
@@ -42,7 +42,7 @@ const InsertTodo = builder.inputType('InsertTodoItem', {
 
 const UpdateTodo = builder.inputType('UpdateTodoItem', {
   fields: (t) => ({
-    uuid: t.string({ required: true }),
+    id: t.string({ required: true }),
     description: t.string(),
     completed: t.boolean(),
   }),
@@ -57,7 +57,7 @@ builder.mutationType({
       },
       resolve: (_, args) => {
         const item = {
-          uuid: uuidv4(),
+          id: uuidv4(),
           description: args.input.description,
           completed: false,
         };
@@ -71,13 +71,13 @@ builder.mutationType({
         input: t.arg({ type: UpdateTodo, required: true }),
       },
       resolve: (_, args) => {
-        const item = TodoItems.find((i) => i.uuid == args.input.uuid);
+        const item = TodoItems.find((i) => i.id == args.input.id);
         if (item) {
           item.completed = args.input.completed || item.completed;
           item.description = args.input.description || item.description;
         } else {
           throw new Error(
-            `uuid of ${args.input.uuid} does not match an existing uuid`
+            `uuid of ${args.input.id} does not match an existing uuid`
           );
         }
         return item;

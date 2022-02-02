@@ -15,7 +15,7 @@ app.get('/todo', (_: Request, res: Response) => res.json({ data: TodoItems }));
 
 app.post('/todo', (req: Request, res: Response) => {
   const item: ITodo = req.body;
-  item.uuid = uuidv4();
+  item.id = uuidv4();
   item.completed = false;
   TodoItems.push(item);
   return res.json({ data: item });
@@ -23,14 +23,14 @@ app.post('/todo', (req: Request, res: Response) => {
 
 app.put('/todo', (req: Request, res: Response) => {
   const item: ITodo = req.body;
-  if (!item.uuid) return res.json({ error: 'uuid required' });
-  const original = TodoItems.find((i) => i.uuid == item.uuid);
+  if (!item.id) return res.json({ error: 'uuid required' });
+  const original = TodoItems.find((i) => i.id == item.id);
   if (original) {
     original.completed = item.completed || original.completed;
     original.description = item.description || original.description;
   } else {
     return res.json({
-      error: `uuid of ${item.uuid} does not match an existing uuid`,
+      error: `uuid of ${item.id} does not match an existing uuid`,
     });
   }
   return res.json({ data: item });
