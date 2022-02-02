@@ -1,6 +1,6 @@
 package graph
 
-import "github.com/reecerose/monorepo-template/apps/server-go/graph/model"
+import "github.com/reecerose/monorepo-template/apps/server-go-graphql/graph/model"
 
 // This file will not be regenerated automatically.
 //

@@ -8,8 +8,8 @@ import (
 	"fmt"
 
 	"github.com/google/uuid"
-	"github.com/reecerose/monorepo-template/apps/server-go/graph/generated"
-	"github.com/reecerose/monorepo-template/apps/server-go/graph/model"
+	"github.com/reecerose/monorepo-template/apps/server-go-graphql/graph/generated"
+	"github.com/reecerose/monorepo-template/apps/server-go-graphql/graph/model"
 )
 
 func (r *mutationResolver) CreateTodo(ctx context.Context, input model.InsertTodo) (*model.Todo, error) {

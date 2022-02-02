@@ -1,4 +1,4 @@
-module github.com/reecerose/monorepo-template/apps/server-go
+module github.com/reecerose/monorepo-template/apps/server-go-graphql
 
 go 1.17
 

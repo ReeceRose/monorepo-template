@@ -9,8 +9,8 @@ import (
 
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
-	"github.com/reecerose/monorepo-template/apps/server-go/graph"
-	"github.com/reecerose/monorepo-template/apps/server-go/graph/generated"
+	"github.com/reecerose/monorepo-template/apps/server-go-graphql/graph"
+	"github.com/reecerose/monorepo-template/apps/server-go-graphql/graph/generated"
 )
 
 const defaultPort = "3004"
