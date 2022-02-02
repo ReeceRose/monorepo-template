@@ -16,6 +16,9 @@ build
 # ts/js
 tsconfig.tsbuildinfo
 
+# go
+vendor/
+
 # misc
 .DS_Store
 *.pem
