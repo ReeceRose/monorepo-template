@@ -6,7 +6,8 @@
     "install": "go mod download",
     "dev": "air run server.go",
     "build": "echo \"Not implemented\"",
+    "build:docker": "docker build . -t monorepo-template-server-go-graphql",
     "generate": "go run github.com/99designs/gqlgen generate",
-    "test": "echo \"Error: no test specified\""
+    "test": "go test"
   }
 }

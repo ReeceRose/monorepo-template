@@ -3,9 +3,6 @@ package main
 import (
 	"log"
 	"net/http"
-	"os"
-
-	_ "github.com/joho/godotenv/autoload"
 
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
@@ -13,19 +10,12 @@ import (
 	"github.com/reecerose/monorepo-template/apps/server-go-graphql/graph/generated"
 )
 
-const defaultPort = "3004"
-
 func main() {
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = defaultPort
-	}
-
 	srv := handler.NewDefaultServer(generated.NewExecutableSchema(generated.Config{Resolvers: &graph.Resolver{}}))
 
 	http.Handle("/", playground.Handler("GraphQL playground", "/query"))
 	http.Handle("/query", srv)
 
-	log.Printf("🚀 Go GraphQL server started at https://localhost:%s", port)
-	log.Fatal(http.ListenAndServe(":"+port, nil))
+	log.Println("🚀 Go GraphQL server started at https://localhost:%3000")
+	log.Fatal(http.ListenAndServe(":3000", nil))
 }
