@@ -1,6 +1,6 @@
+import { PrismaClient } from '@prisma/client';
 import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
-import { PrismaClient } from '@prisma/client';
 
 import { ITodo } from 'lib/types';
 
@@ -8,7 +8,7 @@ const prisma = new PrismaClient();
 const app = express();
 app.use(bodyParser.json());
 
-const PORT = process.env.PORT || 3006;
+const PORT = 3000;
 
 app.get('/todo', async (_: Request, res: Response) => {
   const todoItems = await prisma.todo.findMany();

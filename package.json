@@ -16,12 +16,19 @@
     "test": "turbo run test",
     "test:watch": "turbo run test:watch",
     "test:write": "turbo run test -u",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pnpm-context": "pnpm/pnpm-context.mjs"
   },
   "devDependencies": {
+    "@pnpm/filter-workspace-packages": "^4.4.20",
+    "@pnpm/logger": "^4.0.0",
+    "globby": "^13.1.1",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.2",
+    "meow": "^10.1.2",
+    "mississippi": "^4.0.0",
     "prettier": "^2.5.1",
+    "tar": "^6.1.11",
     "turbo": "latest"
   },
   "engines": {

@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --port 3001",
     "build": "next build",
+    "build:docker": "pnpm --silent --workspace-root pnpm-context -- -p 'tsconfig.json' -p 'bin/' apps/docs/Dockerfile | docker build --build-arg PACKAGE_PATH=apps/docs - -t monorepo-template-docs",
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --project tsconfig.json --noEmit",
@@ -14,6 +15,7 @@
   },
   "dependencies": {
     "next": "12.0.9",
+    "next-transpile-modules": "9.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "ui": "workspace:*"
@@ -40,7 +42,6 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "jest": "^27.4.7",
-    "next-transpile-modules": "9.0.0",
     "postcss": "^8.4.5",
     "tailwindcss": "^3.0.18",
     "tsconfig": "workspace:*",

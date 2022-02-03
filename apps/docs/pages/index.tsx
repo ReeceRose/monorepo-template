@@ -1,4 +1,4 @@
-import { SEO } from 'ui/components/SEO';
+import { SEO, Button } from 'ui/components/';
 
 export default function Home(): JSX.Element {
   return (
@@ -8,6 +8,7 @@ export default function Home(): JSX.Element {
         description="CHANGE_ME"
         siteURL={process.env.SITE_URL || 'https://localhost:3000'}
       />
+      <Button />
     </div>
   );
 }

@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "ts-node-dev src/server.ts",
-    "build": "tsc",
+    "start": "node build/server.js",
+    "build": "tsc --project tsconfig.json",
     "lint": "eslint",
-    "generate": "pnpx prisma generate",
+    "prisma:generate": "pnpx prisma generate",
     "type-check": "tsc --project tsconfig.json --noEmit"
   },
   "dependencies": {
@@ -24,6 +25,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "lib": "workspace:*",
     "prettier": "^2.5.1",
+    "prisma": "^3.9.1",
     "ts-node": "^10.4.0",
     "ts-node-dev": "^1.1.8",
     "tsconfig": "workspace:*",

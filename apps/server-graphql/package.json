@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "ts-node-dev src/server.ts",
-    "build": "tsc",
+    "build": "tsc --project tsconfig.json",
+    "start": "node build/server.js",
+    "build:docker": "pnpm --silent --workspace-root pnpm-context -- -p 'tsconfig.json' -p 'bin/' apps/server-graphql/Dockerfile | docker build --build-arg PACKAGE_PATH=apps/server-graphql - -t monorepo-template-server-graphql",
     "lint": "eslint",
     "type-check": "tsc --project tsconfig.json --noEmit"
   },
@@ -16,6 +18,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@types/express": "^4.17.13",
     "@types/node": "^17.0.13",
     "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.10.1",

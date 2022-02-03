@@ -7,7 +7,7 @@ import { ITodo } from 'lib/types';
 const app = express();
 app.use(bodyParser.json());
 
-const PORT = process.env.PORT || 3002;
+const PORT = 3000;
 
 const TodoItems = new Array<ITodo>();
 

@@ -2,6 +2,12 @@
 
 exports[`Index page matches snapshot 1`] = `
 <DocumentFragment>
-  <div />
+  <div>
+    <button
+      class="text-xl"
+    >
+      Boop
+    </button>
+  </div>
 </DocumentFragment>
 `;
