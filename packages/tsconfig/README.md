@@ -1,3 +1,3 @@
-# `tsconfig`
+# TS config package
 
-These are base shared `tsconfig.json`s from which all other `tsconfig.json`'s inherit from.
+Common TypeScript configuration files shared across any app which uses TypeScript.

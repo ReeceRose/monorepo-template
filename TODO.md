@@ -4,7 +4,7 @@ File to track progress on things to add/change about the project.
 
 ### Todo
 
-- [ ] Update README file once completed (project setup, install air, etc.).
+- [ ] Work on go projects (linting, testing, building, etc.)
 
 ### Done ✓
 
@@ -24,3 +24,4 @@ File to track progress on things to add/change about the project.
 - [x] Make server projects share same lib and have more similar APIs.
 - [x] Add golang examples.
 - [x] Add prisma support/example.
+- [x] Update README file once completed (project setup, install air, etc.).
