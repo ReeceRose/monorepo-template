@@ -240,7 +240,7 @@ func (ec *executionContext) field_Mutation_createTodo_args(ctx context.Context, 
 	var arg0 model.InsertTodo
 	if tmp, ok := rawArgs["input"]; ok {
 		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("input"))
-		arg0, err = ec.unmarshalNInsertTodo2githubᚗcomᚋreeceroseᚋmonorepoᚑtemplateᚋappsᚋserverᚑgoᚋgraphᚋmodelᚐInsertTodo(ctx, tmp)
+		arg0, err = ec.unmarshalNInsertTodo2githubᚗcomᚋreeceroseᚋmonorepoᚑtemplateᚋappsᚋserverᚑgoᚑgraphqlᚋgraphᚋmodelᚐInsertTodo(ctx, tmp)
 		if err != nil {
 			return nil, err
 		}
@@ -255,7 +255,7 @@ func (ec *executionContext) field_Mutation_updateTodo_args(ctx context.Context, 
 	var arg0 model.UpdateTodo
 	if tmp, ok := rawArgs["input"]; ok {
 		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("input"))
-		arg0, err = ec.unmarshalNUpdateTodo2githubᚗcomᚋreeceroseᚋmonorepoᚑtemplateᚋappsᚋserverᚑgoᚋgraphᚋmodelᚐUpdateTodo(ctx, tmp)
+		arg0, err = ec.unmarshalNUpdateTodo2githubᚗcomᚋreeceroseᚋmonorepoᚑtemplateᚋappsᚋserverᚑgoᚑgraphqlᚋgraphᚋmodelᚐUpdateTodo(ctx, tmp)
 		if err != nil {
 			return nil, err
 		}
@@ -356,7 +356,7 @@ func (ec *executionContext) _Mutation_createTodo(ctx context.Context, field grap
 	}
 	res := resTmp.(*model.Todo)
 	fc.Result = res
-	return ec.marshalNTodo2ᚖgithubᚗcomᚋreeceroseᚋmonorepoᚑtemplateᚋappsᚋserverᚑgoᚋgraphᚋmodelᚐTodo(ctx, field.Selections, res)
+	return ec.marshalNTodo2ᚖgithubᚗcomᚋreeceroseᚋmonorepoᚑtemplateᚋappsᚋserverᚑgoᚑgraphqlᚋgraphᚋmodelᚐTodo(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) _Mutation_updateTodo(ctx context.Context, field graphql.CollectedField) (ret graphql.Marshaler) {
@@ -398,7 +398,7 @@ func (ec *executionContext) _Mutation_updateTodo(ctx context.Context, field grap
 	}
 	res := resTmp.(*model.Todo)
 	fc.Result = res
-	return ec.marshalNTodo2ᚖgithubᚗcomᚋreeceroseᚋmonorepoᚑtemplateᚋappsᚋserverᚑgoᚋgraphᚋmodelᚐTodo(ctx, field.Selections, res)
+	return ec.marshalNTodo2ᚖgithubᚗcomᚋreeceroseᚋmonorepoᚑtemplateᚋappsᚋserverᚑgoᚑgraphqlᚋgraphᚋmodelᚐTodo(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) _Query_todos(ctx context.Context, field graphql.CollectedField) (ret graphql.Marshaler) {
@@ -433,7 +433,7 @@ func (ec *executionContext) _Query_todos(ctx context.Context, field graphql.Coll
 	}
 	res := resTmp.([]*model.Todo)
 	fc.Result = res
-	return ec.marshalNTodo2ᚕᚖgithubᚗcomᚋreeceroseᚋmonorepoᚑtemplateᚋappsᚋserverᚑgoᚋgraphᚋmodelᚐTodoᚄ(ctx, field.Selections, res)
+	return ec.marshalNTodo2ᚕᚖgithubᚗcomᚋreeceroseᚋmonorepoᚑtemplateᚋappsᚋserverᚑgoᚑgraphqlᚋgraphᚋmodelᚐTodoᚄ(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) _Query___type(ctx context.Context, field graphql.CollectedField) (ret graphql.Marshaler) {
@@ -2411,7 +2411,7 @@ func (ec *executionContext) marshalNID2string(ctx context.Context, sel ast.Selec
 	return res
 }
 
-func (ec *executionContext) unmarshalNInsertTodo2githubᚗcomᚋreeceroseᚋmonorepoᚑtemplateᚋappsᚋserverᚑgoᚋgraphᚋmodelᚐInsertTodo(ctx context.Context, v interface{}) (model.InsertTodo, error) {
+func (ec *executionContext) unmarshalNInsertTodo2githubᚗcomᚋreeceroseᚋmonorepoᚑtemplateᚋappsᚋserverᚑgoᚑgraphqlᚋgraphᚋmodelᚐInsertTodo(ctx context.Context, v interface{}) (model.InsertTodo, error) {
 	res, err := ec.unmarshalInputInsertTodo(ctx, v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
@@ -2431,11 +2431,11 @@ func (ec *executionContext) marshalNString2string(ctx context.Context, sel ast.S
 	return res
 }
 
-func (ec *executionContext) marshalNTodo2githubᚗcomᚋreeceroseᚋmonorepoᚑtemplateᚋappsᚋserverᚑgoᚋgraphᚋmodelᚐTodo(ctx context.Context, sel ast.SelectionSet, v model.Todo) graphql.Marshaler {
+func (ec *executionContext) marshalNTodo2githubᚗcomᚋreeceroseᚋmonorepoᚑtemplateᚋappsᚋserverᚑgoᚑgraphqlᚋgraphᚋmodelᚐTodo(ctx context.Context, sel ast.SelectionSet, v model.Todo) graphql.Marshaler {
 	return ec._Todo(ctx, sel, &v)
 }
 
-func (ec *executionContext) marshalNTodo2ᚕᚖgithubᚗcomᚋreeceroseᚋmonorepoᚑtemplateᚋappsᚋserverᚑgoᚋgraphᚋmodelᚐTodoᚄ(ctx context.Context, sel ast.SelectionSet, v []*model.Todo) graphql.Marshaler {
+func (ec *executionContext) marshalNTodo2ᚕᚖgithubᚗcomᚋreeceroseᚋmonorepoᚑtemplateᚋappsᚋserverᚑgoᚑgraphqlᚋgraphᚋmodelᚐTodoᚄ(ctx context.Context, sel ast.SelectionSet, v []*model.Todo) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -2459,7 +2459,7 @@ func (ec *executionContext) marshalNTodo2ᚕᚖgithubᚗcomᚋreeceroseᚋmonore
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalNTodo2ᚖgithubᚗcomᚋreeceroseᚋmonorepoᚑtemplateᚋappsᚋserverᚑgoᚋgraphᚋmodelᚐTodo(ctx, sel, v[i])
+			ret[i] = ec.marshalNTodo2ᚖgithubᚗcomᚋreeceroseᚋmonorepoᚑtemplateᚋappsᚋserverᚑgoᚑgraphqlᚋgraphᚋmodelᚐTodo(ctx, sel, v[i])
 		}
 		if isLen1 {
 			f(i)
@@ -2479,7 +2479,7 @@ func (ec *executionContext) marshalNTodo2ᚕᚖgithubᚗcomᚋreeceroseᚋmonore
 	return ret
 }
 
-func (ec *executionContext) marshalNTodo2ᚖgithubᚗcomᚋreeceroseᚋmonorepoᚑtemplateᚋappsᚋserverᚑgoᚋgraphᚋmodelᚐTodo(ctx context.Context, sel ast.SelectionSet, v *model.Todo) graphql.Marshaler {
+func (ec *executionContext) marshalNTodo2ᚖgithubᚗcomᚋreeceroseᚋmonorepoᚑtemplateᚋappsᚋserverᚑgoᚑgraphqlᚋgraphᚋmodelᚐTodo(ctx context.Context, sel ast.SelectionSet, v *model.Todo) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			ec.Errorf(ctx, "must not be null")
@@ -2489,7 +2489,7 @@ func (ec *executionContext) marshalNTodo2ᚖgithubᚗcomᚋreeceroseᚋmonorepo�
 	return ec._Todo(ctx, sel, v)
 }
 
-func (ec *executionContext) unmarshalNUpdateTodo2githubᚗcomᚋreeceroseᚋmonorepoᚑtemplateᚋappsᚋserverᚑgoᚋgraphᚋmodelᚐUpdateTodo(ctx context.Context, v interface{}) (model.UpdateTodo, error) {
+func (ec *executionContext) unmarshalNUpdateTodo2githubᚗcomᚋreeceroseᚋmonorepoᚑtemplateᚋappsᚋserverᚑgoᚑgraphqlᚋgraphᚋmodelᚐUpdateTodo(ctx context.Context, v interface{}) (model.UpdateTodo, error) {
 	res, err := ec.unmarshalInputUpdateTodo(ctx, v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }

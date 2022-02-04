@@ -38,6 +38,7 @@ One monorepo configured to handle multiple projects using various languages. Com
 ## Prerequisites
 1. [pnpm](https://pnpm.io/installation): alternative to npm/yarn
 2. [air](https://github.com/cosmtrek/air#installation): Live reload for Golang
+3. [upx](https://upx.github.io/): high-performance executable packer
 
 ## Setup
 

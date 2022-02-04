@@ -5,11 +5,12 @@
   "scripts": {
     "install": "go mod download",
     "dev": "air run server.go",
-    "build": "echo \"Not implemented\"",
-    "build:docker": "docker build . -t monorepo-template-server-go",
+    "lint": "make lint",
+    "build": "make",
+    "build:docker": "docker build . -t  monorepo-template-server-go",
     "start:docker": "docker run --rm --name=monorepo-template-server-go -p 3003:3000 monorepo-template-server-go",
     "stop:docker": "docker stop monorepo-template-server-go || true",
     "generate": "go run github.com/99designs/gqlgen generate",
-    "test": "go test"
+    "test": "make test"
   }
 }
