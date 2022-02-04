@@ -8,4 +8,4 @@ GOARCH=amd64
 go mod vendor
 
 go build -ldflags="-w -s" .
-upx -4 server-go
+upx -4 server-go-graphql
