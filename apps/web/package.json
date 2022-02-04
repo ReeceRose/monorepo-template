@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --port 3000",
     "build": "next build",
     "build:docker": "pnpm --silent --workspace-root pnpm-context -- -p 'tsconfig.json' -p 'bin/' apps/web/Dockerfile | DOCKER_BUILDKIT=1 docker build --build-arg PACKAGE_PATH=apps/web - -t monorepo-template-web",
     "start": "next start",

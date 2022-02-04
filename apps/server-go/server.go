@@ -3,8 +3,10 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"os"
 
 	"github.com/google/uuid"
+	_ "github.com/joho/godotenv/autoload"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
@@ -19,6 +21,11 @@ type Todo struct {
 
 func main() {
 	todoItems := []*Todo{}
+
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "3000"
+	}
 
 	e := echo.New()
 	e.Use(middleware.Logger())

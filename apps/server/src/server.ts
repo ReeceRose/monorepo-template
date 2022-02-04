@@ -7,8 +7,6 @@ import { ITodo } from 'lib/types';
 const app = express();
 app.use(bodyParser.json());
 
-const PORT = 3000;
-
 const TodoItems = new Array<ITodo>();
 
 app.get('/todo', (_: Request, res: Response) => res.json({ data: TodoItems }));
@@ -35,6 +33,8 @@ app.put('/todo', (req: Request, res: Response) => {
   }
   return res.json({ data: item });
 });
+
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`🚀 Express server started at https://localhost:${PORT}`);

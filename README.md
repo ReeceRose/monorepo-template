@@ -11,17 +11,17 @@ One monorepo configured to handle multiple projects using various languages. Com
 
 ## Apps
 
-| Folder               | Description                                       |
-|----------------------|---------------------------------------------------|
-| `android`            | Empty folder for an android project               |
-| `docs`               | Next.JS template project                          |
-| `ios`                | Empty folder for an ios project                   |
-| `mobile`             | Empty folder for a cross-platform mobile project  |
-| `server-go`          | Golang TODO REST API                              |
-| `server-go-graphql`  | Golang TODO GraphQL API                           |
-| `server-graphql`     | TS TODO GraphQL API                               |
-| `server-ts-prisma`   | TS TODO REST API with Prisma support              |
-| `web`                | Next.JS template project                          |
+| Folder               | Description                                       | Port |
+|----------------------|---------------------------------------------------|------|
+| `android`            | Empty folder for an android project               | N/A  |
+| `docs`               | Next.JS template project                          | 3001 |
+| `ios`                | Empty folder for an ios project                   | N/A  |
+| `mobile`             | Empty folder for a cross-platform mobile project  | N/A  |
+| `server-go`          | Golang TODO REST API                              | 3003 |
+| `server-go-graphql`  | Golang TODO GraphQL API                           | 3007 |
+| `server-graphql`     | TS TODO GraphQL API                               | 3005 |
+| `server-ts-prisma`   | TS TODO REST API with Prisma support              | 3006 |
+| `web`                | Next.JS template project                          | 3000 |
 
 ## Packages
 
@@ -88,6 +88,38 @@ pnpm build
 Docker support thanks to Jon Lauridsen's article [here](https://dev.to/jonlauridsen/exploring-the-monorepo-5-perfect-docker-52aj).
 
 Note, currently server-ts-prisma does not have Docker support due to prisma conflicts on [M1 Macs](https://github.com/prisma/prisma/issues/7755).
+
+### Build containers
+
+Can be run in root folder or in apps/<APP>
+
+```bash
+pnpm build:docker
+```
+
+### Start all containers
+
+Can be run in root folder or in apps/<APP>
+
+```bash
+pnpm start:docker
+```
+
+### Stop all containers
+
+Can be run in root folder or in apps/<APP>
+Most containers should be stopped when you exit, this will kill any remaining. 
+```bash
+pnpm stop:docker
+```
+
+### Push all containers
+
+```bash
+# From root directory
+cd scripts
+./push.sh
+``
 
 ## Issues
 

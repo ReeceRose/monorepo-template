@@ -8,7 +8,7 @@ const prisma = new PrismaClient();
 const app = express();
 app.use(bodyParser.json());
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.get('/todo', async (_: Request, res: Response) => {
   const todoItems = await prisma.todo.findMany();
