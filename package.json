@@ -11,6 +11,7 @@
     "build:docker": "turbo run build:docker",
     "start:docker": "turbo run start:docker",
     "stop:docker": "turbo run stop:docker",
+    "push:docker": "./scripts/push.sh",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
