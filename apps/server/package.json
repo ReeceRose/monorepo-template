@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "ts-node-dev src/server.ts",
     "build": "tsc --project tsconfig.json",
-    "start": "node build/server.js",
     "build:docker": "pnpm --silent --workspace-root pnpm-context -- -p 'tsconfig.json' -p 'bin/' apps/server/Dockerfile | docker build --build-arg PACKAGE_PATH=apps/server - -t monorepo-template-server",
+    "start": "node build/server.js",
+    "start:docker": "docker run --rm --name=monorepo-template-server -p 3002:3000 monorepo-template-server",
     "lint": "eslint",
     "type-check": "tsc --project tsconfig.json --noEmit"
   },

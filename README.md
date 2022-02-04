@@ -82,6 +82,12 @@ cd apps/<application>
 pnpm build
 ```
 
+## Docker
+
+Docker support thanks to Jon Lauridsen's article [here](https://dev.to/jonlauridsen/exploring-the-monorepo-5-perfect-docker-52aj).
+
+Note, currently server-ts-prisma does not have Docker support due to prisma conflicts on [M1 Macs](https://github.com/prisma/prisma/issues/7755).
+
 ## Issues
 
 Have any issue or suggestion? Feel free to open an issue [here](https://github.com/ReeceRose/monorepo-template/issues/new)

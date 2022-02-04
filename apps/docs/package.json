@@ -7,6 +7,8 @@
     "build": "next build",
     "build:docker": "pnpm --silent --workspace-root pnpm-context -- -p 'tsconfig.json' -p 'bin/' apps/docs/Dockerfile | docker build --build-arg PACKAGE_PATH=apps/docs - -t monorepo-template-docs",
     "start": "next start",
+    "start:docker": "docker run --rm --name=monorepo-template-docs -p 3001:3000 monorepo-template-docs",
+    "stop:docker": "docker stop monorepo-template-docs || true",
     "lint": "next lint",
     "type-check": "tsc --project tsconfig.json --noEmit",
     "test": "jest",

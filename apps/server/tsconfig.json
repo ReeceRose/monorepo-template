@@ -3,6 +3,7 @@
   "compilerOptions": {
     "rootDir": "src",
     "strict": true,
+    "target": "ESNext",
     "skipLibCheck": true,
     "module": "CommonJS",
     "esModuleInterop": true,

@@ -16,6 +16,6 @@ func main() {
 	http.Handle("/", playground.Handler("GraphQL playground", "/query"))
 	http.Handle("/query", srv)
 
-	log.Println("🚀 Go GraphQL server started at https://localhost:%3000")
+	log.Println("🚀 Go GraphQL server started at https://localhost:3000")
 	log.Fatal(http.ListenAndServe(":3000", nil))
 }

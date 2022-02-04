@@ -7,6 +7,8 @@
     "dev": "air run server.go",
     "build": "echo \"Not implemented\"",
     "build:docker": "docker build . -t monorepo-template-server-go-graphql",
+    "start:docker": "docker run --rm --name=monorepo-template-server-go-graphql -p 3007:3000 monorepo-template-server-go-graphql",
+    "stop:docker": "docker stop monorepo-template-server-go-graphql || true",
     "generate": "go run github.com/99designs/gqlgen generate",
     "test": "go test"
   }

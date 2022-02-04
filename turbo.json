@@ -4,7 +4,9 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**", "build/**"]
     },
-    "build:docker": {},
+    "build:docker": {
+      "cache": false
+    },
     "test": {
       "cache": false
     },
@@ -16,6 +18,13 @@
       "outputs": []
     },
     "dev": {
+      "cache": false
+    },
+    "start": {},
+    "start:docker": {
+      "cache": false
+    },
+    "stop:docker": {
       "cache": false
     },
     "primsa:generate": {}

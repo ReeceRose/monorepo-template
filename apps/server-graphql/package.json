@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "ts-node-dev src/server.ts",
     "build": "tsc --project tsconfig.json",
-    "start": "node build/server.js",
     "build:docker": "pnpm --silent --workspace-root pnpm-context -- -p 'tsconfig.json' -p 'bin/' apps/server-graphql/Dockerfile | docker build --build-arg PACKAGE_PATH=apps/server-graphql - -t monorepo-template-server-graphql",
+    "start": "node build/server.js",
+    "start:docker": "docker run --rm --name=monorepo-template-server-graphql -p 3005:3000 monorepo-template-server-graphql",
+    "stop:docker": "docker stop monorepo-template-server-graphql || true",
     "lint": "eslint",
     "type-check": "tsc --project tsconfig.json --noEmit"
   },
