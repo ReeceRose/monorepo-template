@@ -1,9 +1,11 @@
 import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import { v4 as uuidv4 } from 'uuid';
+import dotenv from 'dotenv';
 
 import { ITodo } from 'lib/types';
 
+dotenv.config();
 const app = express();
 app.use(bodyParser.json());
 

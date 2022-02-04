@@ -8,18 +8,18 @@ importers:
       '@pnpm/logger': ^4.0.0
       globby: ^13.1.1
       husky: ^7.0.4
-      lint-staged: ^12.3.2
+      lint-staged: ^12.3.3
       meow: ^10.1.2
       mississippi: ^4.0.0
       prettier: ^2.5.1
       tar: ^6.1.11
-      turbo: latest
+      turbo: ^1.1.2
     devDependencies:
       '@pnpm/filter-workspace-packages': 4.4.20_@pnpm+logger@4.0.0
       '@pnpm/logger': 4.0.0
       globby: 13.1.1
       husky: 7.0.4
-      lint-staged: 12.3.2
+      lint-staged: 12.3.3
       meow: 10.1.2
       mississippi: 4.0.0
       prettier: 2.5.1
@@ -100,6 +100,7 @@ importers:
       '@typescript-eslint/parser': ^5.10.1
       body-parser: ^1.19.1
       config: workspace:*
+      dotenv: ^16.0.0
       eslint: ^8.8.0
       eslint-config-prettier: ^8.3.0
       eslint-plugin-prettier: ^4.0.0
@@ -112,6 +113,7 @@ importers:
       uuid: ^8.3.2
     dependencies:
       body-parser: 1.19.1
+      dotenv: 16.0.0
       express: 4.17.2
       uuid: 8.3.2
     devDependencies:
@@ -145,6 +147,7 @@ importers:
       '@typescript-eslint/eslint-plugin': ^5.10.1
       '@typescript-eslint/parser': ^5.10.1
       config: workspace:*
+      dotenv: ^16.0.0
       eslint: ^8.8.0
       eslint-config-prettier: ^8.3.0
       eslint-plugin-prettier: ^4.0.0
@@ -160,6 +163,7 @@ importers:
       uuid: ^8.3.2
     dependencies:
       '@pothos/core': 3.1.1_graphql@16.3.0
+      dotenv: 16.0.0
       express: 4.17.2
       express-graphql: 0.12.0_graphql@16.3.0
       graphql: 16.3.0
@@ -190,6 +194,7 @@ importers:
       '@typescript-eslint/parser': ^5.10.1
       body-parser: ^1.19.1
       config: workspace:*
+      dotenv: ^16.0.0
       eslint: ^8.8.0
       eslint-config-prettier: ^8.3.0
       eslint-plugin-prettier: ^4.0.0
@@ -204,6 +209,7 @@ importers:
     dependencies:
       '@prisma/client': 3.9.1_prisma@3.9.1
       body-parser: 1.19.1
+      dotenv: 16.0.0
       express: 4.17.2
     devDependencies:
       '@types/express': 4.17.13
@@ -2879,6 +2885,11 @@ packages:
       webidl-conversions: 5.0.0
     dev: true
 
+  /dotenv/16.0.0:
+    resolution: {integrity: sha512-qD9WU0MPM4SWLPJy/r2Be+2WgQj8plChsyrCNQzW/0WjvcJQiKQJ9mH3ZgB3fxbUUxgc/11ZJ0Fi5KiimWGz2Q==}
+    engines: {node: '>=12'}
+    dev: false
+
   /duplexify/3.7.1:
     resolution: {integrity: sha512-07z8uv2wMyS51kKhD1KsdXJg5WQ6t93RneqRxUHnskXVtlYYkLqM0gqStQZ3pj073g687jPCHrqNfCzawLYh5g==}
     dependencies:
@@ -3324,7 +3335,7 @@ packages:
       merge-stream: 2.0.0
       npm-run-path: 4.0.1
       onetime: 5.1.2
-      signal-exit: 3.0.6
+      signal-exit: 3.0.7
       strip-final-newline: 2.0.0
     dev: true
 
@@ -4711,8 +4722,8 @@ packages:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: true
 
-  /lint-staged/12.3.2:
-    resolution: {integrity: sha512-gtw4Cbj01SuVSfAOXC6ivd/7VKHTj51yj5xV8TgktFmYNMsZzXuSd5/brqJEA93v63wL7R6iDlunMANOechC0A==}
+  /lint-staged/12.3.3:
+    resolution: {integrity: sha512-OqcLsqcPOqzvsfkxjeBpZylgJ3SRG1RYqc9LxC6tkt6tNsq1bNVkAixBwX09f6CobcHswzqVOCBpFR1Fck0+ag==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -4722,7 +4733,7 @@ packages:
       debug: 4.3.3_supports-color@9.2.1
       execa: 5.1.1
       lilconfig: 2.0.4
-      listr2: 4.0.1
+      listr2: 4.0.2
       micromatch: 4.0.4
       normalize-path: 3.0.0
       object-inspect: 1.12.0
@@ -4733,8 +4744,8 @@ packages:
       - enquirer
     dev: true
 
-  /listr2/4.0.1:
-    resolution: {integrity: sha512-D65Nl+zyYHL2jQBGmxtH/pU8koPZo5C8iCNE8EoB04RwPgQG1wuaKwVbeZv9LJpiH4Nxs0FCp+nNcG8OqpniiA==}
+  /listr2/4.0.2:
+    resolution: {integrity: sha512-YcgwfCWpvPbj9FLUGqvdFvd3hrFWKpOeuXznRgfWEJ7RNr8b/IKKIKZABHx3aU+4CWN/iSAFFSReziQG6vTeIA==}
     engines: {node: '>=12'}
     peerDependencies:
       enquirer: '>= 2.3.0 < 3'
@@ -5849,7 +5860,7 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       onetime: 5.1.2
-      signal-exit: 3.0.6
+      signal-exit: 3.0.7
     dev: true
 
   /reusify/1.0.4:
@@ -5990,8 +6001,8 @@ packages:
       object-inspect: 1.12.0
     dev: true
 
-  /signal-exit/3.0.6:
-    resolution: {integrity: sha512-sDl4qMFpijcGw22U5w63KmD3cZJfBuFlVNbVMKje2keoKML7X2UzWbc4XrmEbDwg0NXJc3yv4/ox7b+JWb57kQ==}
+  /signal-exit/3.0.7:
+    resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
     dev: true
 
   /sisteransi/1.0.5:
@@ -6943,7 +6954,7 @@ packages:
     dependencies:
       imurmurhash: 0.1.4
       is-typedarray: 1.0.0
-      signal-exit: 3.0.6
+      signal-exit: 3.0.7
       typedarray-to-buffer: 3.1.5
     dev: true
 

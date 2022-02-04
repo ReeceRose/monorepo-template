@@ -1,9 +1,11 @@
 import { PrismaClient } from '@prisma/client';
 import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
 
 import { ITodo } from 'lib/types';
 
+dotenv.config();
 const prisma = new PrismaClient();
 const app = express();
 app.use(bodyParser.json());

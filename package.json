@@ -26,12 +26,12 @@
     "@pnpm/logger": "^4.0.0",
     "globby": "^13.1.1",
     "husky": "^7.0.4",
-    "lint-staged": "^12.3.2",
+    "lint-staged": "^12.3.3",
     "meow": "^10.1.2",
     "mississippi": "^4.0.0",
     "prettier": "^2.5.1",
     "tar": "^6.1.11",
-    "turbo": "latest"
+    "turbo": "^1.1.2"
   },
   "engines": {
     "npm": ">=7.0.0",

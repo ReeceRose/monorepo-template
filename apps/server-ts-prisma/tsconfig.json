@@ -4,8 +4,8 @@
     "rootDir": "src",
     "strict": true,
     "skipLibCheck": true,
-    "moduleResolution": "node",
-    "target": "ESNext",
+    "module": "CommonJS",
+    "esModuleInterop": true,
     "outDir": "build"
   },
   "include": [

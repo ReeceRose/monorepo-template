@@ -1,6 +1,7 @@
 {
   "name": "server-ts-prisma",
   "version": "0.1.0",
+  "type": "module",
   "scripts": {
     "dev": "ts-node-dev src/server.ts",
     "start": "node build/server.js",
@@ -12,6 +13,7 @@
   "dependencies": {
     "@prisma/client": "^3.9.0",
     "body-parser": "^1.19.1",
+    "dotenv": "^16.0.0",
     "express": "^4.17.2"
   },
   "devDependencies": {

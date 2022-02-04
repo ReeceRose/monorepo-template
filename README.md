@@ -49,6 +49,8 @@ git@github.com:ReeceRose/monorepo-template.git .
 pnpm install
 ```
 
+In each repository, copy .env.example to .env and fill in appropriately.
+
 # Run the monorepo
 
 ## All applications at once
