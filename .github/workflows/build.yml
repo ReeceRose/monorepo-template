@@ -14,6 +14,9 @@ jobs:
         uses: pnpm/action-setup@v2.0.1
         with:
           version: 6.0.2
+      
+      - name: Install upx
+        run: sudo apt-get install -y upx
       - uses: actions/checkout@v2
       - run: pnpm install
       - run: pnpm lint
