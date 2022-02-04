@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev --port 3001",
     "build": "next build",
-    "build:docker": "pnpm --silent --workspace-root pnpm-context -- -p 'tsconfig.json' -p 'bin/' apps/docs/Dockerfile | docker build --build-arg PACKAGE_PATH=apps/docs - -t monorepo-template-docs",
+    "build:docker": "pnpm --silent --workspace-root pnpm-context -- -p 'tsconfig.json' -p 'bin/' apps/docs/Dockerfile | DOCKER_BUILDKIT=1 docker build --build-arg PACKAGE_PATH=apps/docs - -t monorepo-template-docs",
     "start": "next start",
     "start:docker": "docker run --rm --name=monorepo-template-docs -p 3001:3000 monorepo-template-docs",
     "stop:docker": "docker stop monorepo-template-docs || true",
