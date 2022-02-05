@@ -14,7 +14,7 @@ One monorepo configured to handle multiple projects using various languages. Com
 | Folder               | Description                                       | Port |
 |----------------------|---------------------------------------------------|------|
 | `android`            | Empty folder for an android project               | N/A  |
-| `docs`               | Next.JS template project                          | 3001 |
+| `relay`              | Next.JS project with Relay                        | 3001 |
 | `ios`                | Empty folder for an ios project                   | N/A  |
 | `mobile`             | Empty folder for a cross-platform mobile project  | N/A  |
 | `server-go`          | Golang TODO REST API                              | 3003 |
@@ -121,7 +121,7 @@ pnpm stop:docker
 # From root directory
 cd scripts
 ./push.sh
-``
+```
 
 ## Issues
 

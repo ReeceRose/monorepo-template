@@ -1,14 +1,14 @@
 {
-  "name": "docs",
+  "name": "relay",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --port 3001",
     "build": "next build",
-    "build:docker": "pnpm --silent --workspace-root pnpm-context -- -p 'tsconfig.json' -p 'bin/' apps/docs/Dockerfile | DOCKER_BUILDKIT=1 docker build --build-arg PACKAGE_PATH=apps/docs - -t monorepo-template-docs",
+    "build:docker": "pnpm --silent --workspace-root pnpm-context -- -p 'tsconfig.json' -p 'bin/' apps/relay/Dockerfile | DOCKER_BUILDKIT=1 docker build --build-arg PACKAGE_PATH=apps/relay - -t monorepo-template-relay",
     "start": "next start",
-    "start:docker": "docker run --rm --name=monorepo-template-docs -p 3001:3000 monorepo-template-docs",
-    "stop:docker": "docker stop monorepo-template-docs || true",
+    "start:docker": "docker run --rm --name=monorepo-template-relay -p 3001:3000 monorepo-template-relay",
+    "stop:docker": "docker stop monorepo-template-relay || true",
     "lint": "next lint",
     "type-check": "tsc --project tsconfig.json --noEmit",
     "test": "jest",
