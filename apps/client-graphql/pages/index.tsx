@@ -1,7 +1,9 @@
 import { useQuery } from 'urql';
 import { withUrqlClient } from 'next-urql';
 
-import { SEO, Button } from 'ui/components/';
+import { SEO } from 'ui/components/';
+import { TodoList } from 'ui/components/Todo/';
+import { GenericNavbar } from 'ui/components/Navbars/';
 
 import { TodosQueryDocument } from '@/generated/graphql';
 
@@ -15,19 +17,27 @@ export function Home(): JSX.Element {
     query: TodosQueryDocument,
   });
 
+  const markAsCompleted = (id: string): boolean => {
+    console.log('marking as done on ', id);
+    return true;
+  };
+
   return (
-    <div>
+    <>
       <SEO
-        title="CHANGE_ME"
-        description="CHANGE_ME"
+        title="Todo list"
+        description="Todo list powered by GraphQL"
         siteURL={process.env.SITE_URL || 'https://localhost:3001'}
       />
-      <Button />
-
-      {result.data &&
-        result.data.todos.map((todo) => (
-          <p key={todo.id}>{todo.description}</p>
-        ))}
-    </div>
+      <main>
+        <GenericNavbar />
+        <div className="pt-20">
+          <TodoList
+            data={result.data?.todos}
+            markAsCompleted={markAsCompleted}
+          />
+        </div>
+      </main>
+    </>
   );
 }

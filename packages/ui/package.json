@@ -20,6 +20,7 @@
     "babel-jest": "^27.4.6",
     "config": "workspace:*",
     "jest": "^27.4.7",
+    "lib": "workspace:*",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "tsconfig": "workspace:*",

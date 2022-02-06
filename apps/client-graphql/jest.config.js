@@ -7,9 +7,10 @@ module.exports = {
     '^@/layouts/(.*)$': '<rootDir>/layouts/$1',
     '^@/graphql/(.*)$': '<rootDir>/graphql/$1',
     '^@/generated/(.*)$': '<rootDir>/generated/$1',
+    '^@/testing/(.*)$': '<rootDir>/__tests__/$1',
     '^ui/(.*)$': '<rootDir>/../../packages/ui/$1'
   },
   setupFiles: ['<rootDir>/.jest/setEnvVars.js'],
   setupFilesAfterEnv: ['<rootDir>/.jest/setupTests.js'],
-  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
+  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/', '<rootDir>/__tests__/mocks'],
 }

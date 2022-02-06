@@ -2,12 +2,88 @@
 
 exports[`Index page matches snapshot 1`] = `
 <DocumentFragment>
-  <div>
-    <button
-      class="text-xl"
+  <main>
+    <nav
+      class="fixed top-0 z-50 flex flex-wrap items-center justify-between w-full px-2 py-3 bg-white shadow navbar-expand-lg"
     >
-      Boop
-    </button>
-  </div>
+      <div
+        class="container flex flex-wrap items-center justify-between px-4 mx-auto"
+      >
+        <div
+          class="relative flex justify-between w-full lg:w-auto lg:static lg:block lg:justify-start"
+        >
+          <div
+            class="flex items-center text-2xl font-black text-gray-800 uppercase align-middle dark:text-white"
+          >
+            Client - GraphQL
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="pt-20"
+    >
+      <div
+        class="flex flex-col mx-auto sm:w-full md:w-8/12"
+      >
+        <div
+          class="overflow-x-auto sm:-mx-6 lg:-mx-8"
+        >
+          <div
+            class="inline-block min-w-full py-2 sm:px-6 lg:px-8"
+          >
+            <div
+              class="overflow-hidden shadow-md sm:rounded-lg"
+            >
+              <table
+                class="min-w-full"
+              >
+                <thead
+                  class="bg-gray-50 dark:bg-gray-700"
+                >
+                  <tr>
+                    <th
+                      class="w-2/3 px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
+                      scope="col"
+                    >
+                      Description
+                    </th>
+                    <th
+                      class="w-1/4 px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
+                      scope="col"
+                    >
+                      Completed
+                    </th>
+                    <th
+                      class="relative px-6 py-3"
+                      scope="col"
+                    >
+                      <span
+                        class="sr-only"
+                      >
+                        Mark as completed
+                      </span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                  >
+                    <td
+                      class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    >
+                      No data
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+   
 </DocumentFragment>
 `;

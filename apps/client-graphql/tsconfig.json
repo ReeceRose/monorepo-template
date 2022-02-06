@@ -8,7 +8,8 @@
       "@/styles/*": ["styles/*"],
       "@/layouts/*": ["layouts/*"],
       "@/generated/*": ["generated/*"],
-      "@/graphql/*": ["graphql/*"]
+      "@/graphql/*": ["graphql/*"],
+      "@/testing/*": ["__tests__/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
