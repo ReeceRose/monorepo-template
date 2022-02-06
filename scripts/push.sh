@@ -12,7 +12,7 @@ tag_and_push () {
   docker push "${USERNAME}/$1:${VERSION}"
 }
 
-tag_and_push monorepo-template-relay
+tag_and_push monorepo-template-client-graphql
 tag_and_push monorepo-template-server
 tag_and_push monorepo-template-server-go
 tag_and_push monorepo-template-server-go-graphql

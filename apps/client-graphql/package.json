@@ -1,16 +1,15 @@
 {
-  "name": "relay",
+  "name": "client-graphql",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "pnpm relay:copy && next dev --port 3001",
-    "build": "pnpm relay:copy && next build",
-    "build:docker": "pnpm --silent --workspace-root pnpm-context -- -p 'tsconfig.json' -p 'bin/' apps/relay/Dockerfile | DOCKER_BUILDKIT=1 docker build --build-arg PACKAGE_PATH=apps/relay - -t monorepo-template-relay",
+    "dev": "pnpm schema:copy && next dev --port 3001",
+    "build": "pnpm schema:copy && next build",
+    "build:docker": "pnpm --silent --workspace-root pnpm-context -- -p 'tsconfig.json' -p 'bin/' apps/client-graphql/Dockerfile | DOCKER_BUILDKIT=1 docker build --build-arg PACKAGE_PATH=apps/client-graphql - -t monorepo-template-client-graphql",
     "start": "next start",
-    "start:docker": "docker run --rm --name=monorepo-template-relay -p 3001:3000 monorepo-template-relay",
-    "stop:docker": "docker stop monorepo-template-relay || true",
-    "relay": "relay-compiler",
-    "relay:copy": "cp ../server-go-graphql/graph/schema.graphqls data/schema.graphql",
+    "start:docker": "docker run --rm --name=monorepo-template-client-graphql -p 3001:3000 monorepo-template-client-graphql",
+    "stop:docker": "docker stop monorepo-template-client-graphql || true",
+    "schema:copy": "cp ../server-go-graphql/graph/schema.graphqls data/schema.graphql",
     "lint": "next lint",
     "type-check": "tsc --project tsconfig.json --noEmit",
     "test": "jest",
@@ -18,12 +17,10 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "isomorphic-fetch": "^3.0.0",
     "next": "12.0.9",
     "next-transpile-modules": "9.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-relay": "^13.0.2",
     "ui": "workspace:*"
   },
   "devDependencies": {
@@ -36,12 +33,10 @@
     "@types/jest": "^27.4.0",
     "@types/node": "^17.0.13",
     "@types/react": "^17.0.38",
-    "@types/react-relay": "^13.0.1",
     "@typescript-eslint/eslint-plugin": "^5.10.1",
     "@typescript-eslint/parser": "^5.10.1",
     "autoprefixer": "^10.4.2",
     "babel-jest": "^27.4.6",
-    "babel-plugin-relay": "^13.0.2",
     "config": "workspace:*",
     "eslint": "^8.8.0",
     "eslint-config-next": "^12.0.9",
@@ -53,7 +48,7 @@
     "graphql": "^16.3.0",
     "jest": "^27.4.7",
     "postcss": "^8.4.5",
-    "relay-compiler": "^13.0.2",
+    "prettier": "^2.5.1",
     "tailwindcss": "^3.0.18",
     "tsconfig": "workspace:*",
     "typescript": "^4.5.5"

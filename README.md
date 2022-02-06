@@ -14,7 +14,7 @@ One monorepo configured to handle multiple projects using various languages. Com
 | Folder               | Description                                       | Port |
 |----------------------|---------------------------------------------------|------|
 | `android`            | Empty folder for an android project               | N/A  |
-| `relay`              | Next.JS project with Relay                        | 3001 |
+| `client-graphql`     | Next.JS project using GraphQL client              | 3001 |
 | `ios`                | Empty folder for an ios project                   | N/A  |
 | `mobile`             | Empty folder for a cross-platform mobile project  | N/A  |
 | `server-go`          | Golang TODO REST API                              | 3003 |
