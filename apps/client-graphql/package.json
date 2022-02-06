@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "pnpm schema:copy && next dev --port 3001",
-    "build": "pnpm schema:copy && next build",
+    "build": "next build",
     "build:docker": "pnpm --silent --workspace-root pnpm-context -- -p 'tsconfig.json' -p 'bin/' apps/client-graphql/Dockerfile | DOCKER_BUILDKIT=1 docker build --build-arg PACKAGE_PATH=apps/client-graphql - -t monorepo-template-client-graphql",
     "start": "next start",
     "start:docker": "docker run --rm --name=monorepo-template-client-graphql -p 3001:3000 monorepo-template-client-graphql",
