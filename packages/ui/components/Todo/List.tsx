@@ -4,10 +4,10 @@ import { TodoItem } from './Item';
 
 type Props = {
   data?: ITodo[];
-  markAsCompleted: (id: string) => boolean;
+  toggleCompleted: (id: string, completed: boolean) => Promise<void>;
 };
 
-export const TodoList = ({ data, markAsCompleted }: Props): JSX.Element => {
+export const TodoList = ({ data, toggleCompleted }: Props): JSX.Element => {
   return (
     <div className="flex flex-col mx-auto sm:w-full md:w-8/12">
       <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -29,7 +29,7 @@ export const TodoList = ({ data, markAsCompleted }: Props): JSX.Element => {
                     Completed
                   </th>
                   <th scope="col" className="relative px-6 py-3">
-                    <span className="sr-only">Mark as completed</span>
+                    <span className="sr-only">Actions</span>
                   </th>
                 </tr>
               </thead>
@@ -38,7 +38,7 @@ export const TodoList = ({ data, markAsCompleted }: Props): JSX.Element => {
                   data?.map((todo: ITodo) => (
                     <TodoItem
                       key={todo.id}
-                      markAsCompleted={markAsCompleted}
+                      toggleCompleted={toggleCompleted}
                       data={todo}
                     />
                   ))

@@ -2,10 +2,10 @@ import { ITodo } from 'lib/types';
 
 type Props = {
   data: ITodo;
-  markAsCompleted: (id: string) => boolean;
+  toggleCompleted: (id: string, completed: boolean) => Promise<void>;
 };
 
-export const TodoItem = ({ data, markAsCompleted }: Props): JSX.Element => {
+export const TodoItem = ({ data, toggleCompleted }: Props): JSX.Element => {
   return (
     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
       <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
@@ -18,11 +18,20 @@ export const TodoItem = ({ data, markAsCompleted }: Props): JSX.Element => {
         <button
           onClick={(e) => {
             e.preventDefault();
-            markAsCompleted(data.id);
+            toggleCompleted(data.id, !data.completed);
           }}
           className="text-blue-600 dark:text-blue-500 hover:underline"
         >
-          Mark as completed
+          Toggle completed
+        </button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            toggleCompleted(data.id, !data.completed);
+          }}
+          className="ml-4 text-red-600 hover:underline"
+        >
+          Delete
         </button>
       </td>
     </tr>

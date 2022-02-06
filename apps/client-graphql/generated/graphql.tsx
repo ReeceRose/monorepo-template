@@ -55,6 +55,24 @@ export type UpdateTodo = {
   id: Scalars['String'];
 };
 
+export type CreateTodoMutationVariables = Exact<{
+  todo: InsertTodo;
+}>;
+
+export type CreateTodoMutation = {
+  __typename?: 'Mutation';
+  createTodo: { __typename?: 'Todo'; id: string; description: string };
+};
+
+export type UpdateTodoMutationVariables = Exact<{
+  todo: UpdateTodo;
+}>;
+
+export type UpdateTodoMutation = {
+  __typename?: 'Mutation';
+  updateTodo: { __typename?: 'Todo'; id: string; description: string };
+};
+
 export type TodosQueryQueryVariables = Exact<{ [key: string]: never }>;
 
 export type TodosQueryQuery = {
@@ -67,6 +85,104 @@ export type TodosQueryQuery = {
   }>;
 };
 
+export const CreateTodoDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'mutation',
+      name: { kind: 'Name', value: 'createTodo' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'todo' } },
+          type: {
+            kind: 'NonNullType',
+            type: {
+              kind: 'NamedType',
+              name: { kind: 'Name', value: 'InsertTodo' },
+            },
+          },
+        },
+      ],
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'createTodo' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'input' },
+                value: {
+                  kind: 'Variable',
+                  name: { kind: 'Name', value: 'todo' },
+                },
+              },
+            ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'description' } },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<CreateTodoMutation, CreateTodoMutationVariables>;
+export const UpdateTodoDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'mutation',
+      name: { kind: 'Name', value: 'updateTodo' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'todo' } },
+          type: {
+            kind: 'NonNullType',
+            type: {
+              kind: 'NamedType',
+              name: { kind: 'Name', value: 'UpdateTodo' },
+            },
+          },
+        },
+      ],
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'updateTodo' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'input' },
+                value: {
+                  kind: 'Variable',
+                  name: { kind: 'Name', value: 'todo' },
+                },
+              },
+            ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'description' } },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<UpdateTodoMutation, UpdateTodoMutationVariables>;
 export const TodosQueryDocument = {
   kind: 'Document',
   definitions: [

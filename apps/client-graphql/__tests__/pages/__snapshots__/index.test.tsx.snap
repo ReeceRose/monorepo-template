@@ -61,7 +61,7 @@ exports[`Index page matches snapshot 1`] = `
                       <span
                         class="sr-only"
                       >
-                        Mark as completed
+                        Actions
                       </span>
                     </th>
                   </tr>
