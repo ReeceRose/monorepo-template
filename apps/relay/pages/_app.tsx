@@ -1,5 +1,8 @@
 import { AppProps } from 'next/app';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { RelayEnvironmentProvider } from 'react-relay';
+
+import { createEnvironment } from 'environment';
 
 import '@/styles/globals.css';
 
@@ -11,8 +14,24 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     }
   }, []);
 
-  // eslint-disable-next-line react/jsx-props-no-spreading
-  return <Component {...pageProps} />;
+  const [env] = useState(() => {
+    if (typeof window === 'undefined') {
+      return createEnvironment().environment;
+    }
+
+    const recordsEl = document.getElementById('relay--records');
+
+    const records =
+      recordsEl && recordsEl.innerText && JSON.parse(recordsEl.innerText);
+
+    return createEnvironment({ records }).environment;
+  });
+
+  return (
+    <RelayEnvironmentProvider environment={env}>
+      <Component {...pageProps} />
+    </RelayEnvironmentProvider>
+  );
 }
 
 export default MyApp;

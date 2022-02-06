@@ -1,0 +1,10 @@
+/*
+  Note, until the following PRs are in a release branch, we need babel.
+  https://github.com/vercel/next.js/pull/33240
+  https://github.com/vercel/next.js/pull/33702
+  Once released, we can remove babel support and use SWC again
+*/
+{
+  "presets": ["next/babel"],
+  "plugins": ["relay"]
+}
