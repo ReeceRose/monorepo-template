@@ -79,6 +79,6 @@ func main() {
 		return c.JSON(http.StatusOK, Map{"data": original})
 	})
 
-	fmt.Println("🚀 Go server started at https://localhost:3000")
-	e.Logger.Fatal(e.Start(":3000"))
+	fmt.Println("🚀 Go server started at https://localhost:" + port)
+	e.Logger.Fatal(e.Start(":" + port))
 }

@@ -16,7 +16,6 @@ app.use(
 );
 
 const PORT = process.env.PORT || 3000;
-console.log(process.env.PORT);
 
 app.listen(PORT, () => {
   console.log(`🚀 GraphQL server started at https://localhost:${PORT}`);

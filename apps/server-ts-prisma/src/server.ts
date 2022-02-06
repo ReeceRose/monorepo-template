@@ -26,7 +26,6 @@ app.post('/todo', async (req: Request, res: Response) => {
       completed: false,
     },
   });
-  console.log(result);
 
   return res.json({ data: result });
 });
