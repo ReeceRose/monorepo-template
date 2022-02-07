@@ -5,11 +5,11 @@
 
 Monorepo powered by [Turbo](https://turborepo.org/).
 
-# Overview
+## Overview
 
 One monorepo configured to handle multiple projects using various languages. Comes configured with ESLint, TailwindCSS, Jest, Prettier, Husky, and more.
 
-## Apps
+### Apps
 
 | Folder               | Description                                       | Port |
 |----------------------|---------------------------------------------------|------|
@@ -23,7 +23,7 @@ One monorepo configured to handle multiple projects using various languages. Com
 | `server-ts-prisma`   | TS TODO REST API with Prisma support              | 3006 |
 | `web`                | Next.JS template project                          | 3000 |
 
-## Packages
+### Packages
 
 | Folder               | Description                                       |
 |----------------------|---------------------------------------------------|
@@ -33,14 +33,14 @@ One monorepo configured to handle multiple projects using various languages. Com
 | `ui`                 | Common React components                           |
 
 
-# Installation
+## Installation
 
-## Prerequisites
+### Prerequisites
 1. [pnpm](https://pnpm.io/installation): alternative to npm/yarn
 2. [air](https://github.com/cosmtrek/air#installation): Live reload for Golang
 3. [upx](https://upx.github.io/): high-performance executable packer
 
-## Setup
+### Setup
 
 ```bash
 # clone repo 
@@ -51,15 +51,28 @@ pnpm install
 
 In each repository, copy .env.example to .env and fill in appropriately.
 
-# Run the monorepo
+## What to change after cloning
 
-## All applications at once
+1. I would start by removing any applications in which you do not intend on using.
+2. Remove all React components from the ui package. I would remove the `components/` folder and the corresponding tests.
+2. Remove the `todo` type in the lib package.
+3. Any remaining applications should be renamed. Do a global search for the previous application name and refactor accordingly.
+4. Any remaining code should be removed in the applications you have kept.
+5. Do a global search for `CHANGE_ME` and replace any occurrences with the appropriate values.
+6. Update any remaining README files.
+7. Delete pnpm-lock.yaml and run `pnpm install` to regenerate it. This will remove any old applications.
+8. Continue to refactor as you notice anything left from the template.
+
+
+## Run the monorepo
+
+### All applications at once
 
 ```bash
 pnpm dev
 ```
 
-## One application
+### One application
 
 ```bash
 # replace <application> with your choice
@@ -67,17 +80,17 @@ cd apps/<application>
 pnpm dev
 ```
 
-# Build the monorepo
+## Build the monorepo
 
 Note, there currently is not a great way to publish these all at once. A more ideal solution would to probably build docker containers and add a `pnpm publish` command which would push the containers to a repository.
 
-## All applications at once
+### All applications at once
 
 ```bash
 pnpm build
 ```
 
-## One application
+### One application
 
 ```bash
 # replace <application> with your choice
