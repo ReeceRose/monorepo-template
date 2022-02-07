@@ -60,15 +60,6 @@ export type UpdateTodo = {
   id: Scalars['String'];
 };
 
-export type CreateTodoMutationVariables = Exact<{
-  todo: InsertTodo;
-}>;
-
-export type CreateTodoMutation = {
-  __typename?: 'Mutation';
-  createTodo: { __typename?: 'Todo'; id: string; description: string };
-};
-
 export type DeleteTodoMutationVariables = Exact<{
   id: Scalars['String'];
 }>;
@@ -76,6 +67,15 @@ export type DeleteTodoMutationVariables = Exact<{
 export type DeleteTodoMutation = {
   __typename?: 'Mutation';
   deleteTodo: { __typename?: 'Todo'; id: string };
+};
+
+export type InsertTodoMutationVariables = Exact<{
+  todo: InsertTodo;
+}>;
+
+export type InsertTodoMutation = {
+  __typename?: 'Mutation';
+  createTodo: { __typename?: 'Todo'; id: string; description: string };
 };
 
 export type UpdateTodoMutationVariables = Exact<{
@@ -104,55 +104,6 @@ export type TodosQueryQuery = {
   }>;
 };
 
-export const CreateTodoDocument = {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'OperationDefinition',
-      operation: 'mutation',
-      name: { kind: 'Name', value: 'createTodo' },
-      variableDefinitions: [
-        {
-          kind: 'VariableDefinition',
-          variable: { kind: 'Variable', name: { kind: 'Name', value: 'todo' } },
-          type: {
-            kind: 'NonNullType',
-            type: {
-              kind: 'NamedType',
-              name: { kind: 'Name', value: 'InsertTodo' },
-            },
-          },
-        },
-      ],
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'createTodo' },
-            arguments: [
-              {
-                kind: 'Argument',
-                name: { kind: 'Name', value: 'input' },
-                value: {
-                  kind: 'Variable',
-                  name: { kind: 'Name', value: 'todo' },
-                },
-              },
-            ],
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-                { kind: 'Field', name: { kind: 'Name', value: 'description' } },
-              ],
-            },
-          },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<CreateTodoMutation, CreateTodoMutationVariables>;
 export const DeleteTodoDocument = {
   kind: 'Document',
   definitions: [
@@ -201,6 +152,55 @@ export const DeleteTodoDocument = {
     },
   ],
 } as unknown as DocumentNode<DeleteTodoMutation, DeleteTodoMutationVariables>;
+export const InsertTodoDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'mutation',
+      name: { kind: 'Name', value: 'insertTodo' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'todo' } },
+          type: {
+            kind: 'NonNullType',
+            type: {
+              kind: 'NamedType',
+              name: { kind: 'Name', value: 'InsertTodo' },
+            },
+          },
+        },
+      ],
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'createTodo' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'input' },
+                value: {
+                  kind: 'Variable',
+                  name: { kind: 'Name', value: 'todo' },
+                },
+              },
+            ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'description' } },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<InsertTodoMutation, InsertTodoMutationVariables>;
 export const UpdateTodoDocument = {
   kind: 'Document',
   definitions: [

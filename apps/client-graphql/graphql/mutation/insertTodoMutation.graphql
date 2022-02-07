@@ -1,4 +1,4 @@
-mutation createTodo($todo: InsertTodo!) {
+mutation insertTodo($todo: InsertTodo!) {
   createTodo(input: $todo) {
     id
     description

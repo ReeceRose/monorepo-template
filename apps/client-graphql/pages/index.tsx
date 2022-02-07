@@ -2,13 +2,15 @@ import { useQuery, useMutation } from 'urql';
 import { withUrqlClient } from 'next-urql';
 
 import { SEO } from 'ui/components/';
-import { TodoList } from 'ui/components/Todo/';
+import { TodoList, NewTodo } from 'ui/components/Todo/';
 import { GenericNavbar } from 'ui/components/Navbars/';
 import { ITodo } from 'lib/types';
 
 import {
   DeleteTodoDocument,
   DeleteTodoMutation,
+  InsertTodoDocument,
+  InsertTodoMutation,
   TodosQueryDocument,
   UpdateTodoDocument,
   UpdateTodoMutation,
@@ -38,6 +40,13 @@ export function Home(): JSX.Element {
     console.log('Failed to delete todo...');
   }
 
+  const [insertTodoResult, sendInsert] =
+    useMutation<InsertTodoMutation>(InsertTodoDocument);
+  if (insertTodoResult.error) {
+    console.log('Failed to delete todo...');
+  }
+  // This is an interesting problem. I don't want this logic in the UI library, I think in a "realistic"
+  // project it would be better to create a wrapper for that UI component which adds this logic.
   const toggleCompleted = async (todo: ITodo): Promise<void> => {
     const variables = {
       todo: {
@@ -73,6 +82,27 @@ export function Home(): JSX.Element {
     }
   };
 
+  const insertTodo = async (description: string): Promise<void> => {
+    const variables = {
+      todo: {
+        description,
+      },
+    };
+
+    // Update GraphQL
+    const res = await sendInsert(variables);
+    // Update local state
+    if (res.data) {
+      result.data?.todos.push({
+        id: res.data.createTodo.id,
+        description: description,
+        completed: false,
+      });
+    } else {
+      console.log('Failed to insert todo');
+    }
+  };
+
   return (
     <>
       <SEO
@@ -82,7 +112,8 @@ export function Home(): JSX.Element {
       />
       <main>
         <GenericNavbar />
-        <div className="pt-20">
+        <div className="pt-20 mx-auto sm:w-full md:w-8/12">
+          <NewTodo insertTodo={insertTodo} />
           <TodoList
             data={result.data?.todos}
             toggleCompleted={toggleCompleted}
