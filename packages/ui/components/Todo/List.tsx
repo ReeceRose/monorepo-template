@@ -4,10 +4,15 @@ import { TodoItem } from './Item';
 
 type Props = {
   data?: ITodo[];
-  toggleCompleted: (id: string, completed: boolean) => Promise<void>;
+  toggleCompleted: (todo: ITodo) => Promise<void>;
+  deleteTodo: (id: string) => Promise<void>;
 };
 
-export const TodoList = ({ data, toggleCompleted }: Props): JSX.Element => {
+export const TodoList = ({
+  data,
+  toggleCompleted,
+  deleteTodo,
+}: Props): JSX.Element => {
   return (
     <div className="flex flex-col mx-auto sm:w-full md:w-8/12">
       <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -39,6 +44,7 @@ export const TodoList = ({ data, toggleCompleted }: Props): JSX.Element => {
                     <TodoItem
                       key={todo.id}
                       toggleCompleted={toggleCompleted}
+                      deleteTodo={deleteTodo}
                       data={todo}
                     />
                   ))

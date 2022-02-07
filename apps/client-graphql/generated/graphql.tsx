@@ -26,11 +26,16 @@ export type InsertTodo = {
 export type Mutation = {
   __typename?: 'Mutation';
   createTodo: Todo;
+  deleteTodo: Todo;
   updateTodo: Todo;
 };
 
 export type MutationCreateTodoArgs = {
   input: InsertTodo;
+};
+
+export type MutationDeleteTodoArgs = {
+  id: Scalars['String'];
 };
 
 export type MutationUpdateTodoArgs = {
@@ -64,13 +69,27 @@ export type CreateTodoMutation = {
   createTodo: { __typename?: 'Todo'; id: string; description: string };
 };
 
+export type DeleteTodoMutationVariables = Exact<{
+  id: Scalars['String'];
+}>;
+
+export type DeleteTodoMutation = {
+  __typename?: 'Mutation';
+  deleteTodo: { __typename?: 'Todo'; id: string };
+};
+
 export type UpdateTodoMutationVariables = Exact<{
   todo: UpdateTodo;
 }>;
 
 export type UpdateTodoMutation = {
   __typename?: 'Mutation';
-  updateTodo: { __typename?: 'Todo'; id: string; description: string };
+  updateTodo: {
+    __typename?: 'Todo';
+    id: string;
+    description: string;
+    completed: boolean;
+  };
 };
 
 export type TodosQueryQueryVariables = Exact<{ [key: string]: never }>;
@@ -134,6 +153,54 @@ export const CreateTodoDocument = {
     },
   ],
 } as unknown as DocumentNode<CreateTodoMutation, CreateTodoMutationVariables>;
+export const DeleteTodoDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'mutation',
+      name: { kind: 'Name', value: 'deleteTodo' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'id' } },
+          type: {
+            kind: 'NonNullType',
+            type: {
+              kind: 'NamedType',
+              name: { kind: 'Name', value: 'String' },
+            },
+          },
+        },
+      ],
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'deleteTodo' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'id' },
+                value: {
+                  kind: 'Variable',
+                  name: { kind: 'Name', value: 'id' },
+                },
+              },
+            ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<DeleteTodoMutation, DeleteTodoMutationVariables>;
 export const UpdateTodoDocument = {
   kind: 'Document',
   definitions: [
@@ -175,6 +242,7 @@ export const UpdateTodoDocument = {
               selections: [
                 { kind: 'Field', name: { kind: 'Name', value: 'id' } },
                 { kind: 'Field', name: { kind: 'Name', value: 'description' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'completed' } },
               ],
             },
           },

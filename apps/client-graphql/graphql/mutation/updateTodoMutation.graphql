@@ -2,5 +2,6 @@ mutation updateTodo($todo: UpdateTodo!) {
   updateTodo(input: $todo) {
     id
     description
+    completed
   }
 }

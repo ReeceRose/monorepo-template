@@ -39,12 +39,30 @@ func (r *mutationResolver) UpdateTodo(ctx context.Context, input model.UpdateTod
 	if todo == nil {
 		return nil, fmt.Errorf("uuid of %s does not match an existing uuid", input.ID)
 	}
-
-	todo.Completed = *input.Completed || todo.Completed
+	if *input.Completed != todo.Completed {
+		todo.Completed = *input.Completed
+	}
 	if input.Description != nil {
 		todo.Description = *input.Description
 	}
 
+	return todo, nil
+}
+
+func (r *mutationResolver) DeleteTodo(ctx context.Context, id string) (*model.Todo, error) {
+	var todo *model.Todo
+	var index int
+	for i, k := range r.todos {
+		if k.ID != id {
+			continue
+		}
+		index = i
+		todo = k
+	}
+	if todo == nil {
+		return nil, fmt.Errorf("uuid of %s does not match an existing uuid", id)
+	}
+	r.todos = append(r.todos[:index], r.todos[index+1:]...)
 	return todo, nil
 }
 

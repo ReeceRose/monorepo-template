@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { useQuery, useMutation } from 'urql';
 import { withUrqlClient } from 'next-urql';
 
@@ -8,6 +7,8 @@ import { GenericNavbar } from 'ui/components/Navbars/';
 import { ITodo } from 'lib/types';
 
 import {
+  DeleteTodoDocument,
+  DeleteTodoMutation,
   TodosQueryDocument,
   UpdateTodoDocument,
   UpdateTodoMutation,
@@ -19,13 +20,9 @@ export default withUrqlClient((_ssrExchange, _ctx) => ({
 }))(Home);
 
 export function Home(): JSX.Element {
-  const [todos, setTodos] = useState<ITodo[]>([]);
   const [result] = useQuery({
     query: TodosQueryDocument,
   });
-  useEffect(() => {
-    setTodos(result.data?.todos || []);
-  }, [result.data?.todos]);
 
   const [updateTodoResult, sendUpdate] =
     useMutation<UpdateTodoMutation>(UpdateTodoDocument);
@@ -34,24 +31,43 @@ export function Home(): JSX.Element {
     console.log('Failed to updated todo...');
   }
 
-  const toggleCompleted = async (
-    id: string,
-    completed: boolean
-  ): Promise<void> => {
-    console.log('marking as done on ', id);
+  const [deleteTodoResult, sendDelete] =
+    useMutation<DeleteTodoMutation>(DeleteTodoDocument);
 
+  if (deleteTodoResult.error) {
+    console.log('Failed to delete todo...');
+  }
+
+  const toggleCompleted = async (todo: ITodo): Promise<void> => {
     const variables = {
       todo: {
-        id: id,
-        completed: completed,
+        id: todo.id,
+        description: todo.description,
+        completed: !todo.completed,
       },
     };
     // Update GraphQL
     await sendUpdate(variables);
     // Update local state
-    const todo = todos.find((todo) => todo.id == id);
-    if (todo) {
-      todo.completed = completed;
+    const original = result.data?.todos.find((todo) => todo.id == todo.id);
+    if (original) {
+      original.completed = !todo.completed;
+    } else {
+      console.log('Failed to update todo');
+    }
+  };
+
+  const deleteTodo = async (id: string): Promise<void> => {
+    const variables = {
+      id,
+    };
+    // Update GraphQL
+    await sendDelete(variables);
+    // Update local state
+    if (result.data?.todos) {
+      result.data.todos = result.data?.todos.filter(
+        (todo) => todo.id == todo.id
+      );
     } else {
       console.log('Failed to update todo');
     }
@@ -67,7 +83,11 @@ export function Home(): JSX.Element {
       <main>
         <GenericNavbar />
         <div className="pt-20">
-          <TodoList data={todos} toggleCompleted={toggleCompleted} />
+          <TodoList
+            data={result.data?.todos}
+            toggleCompleted={toggleCompleted}
+            deleteTodo={deleteTodo}
+          />
         </div>
       </main>
     </>
