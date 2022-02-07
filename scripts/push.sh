@@ -3,7 +3,7 @@
 # Push docker containers
 # run `pnpm build:docker`` first
 
-VERSION=1.0.1
+VERSION=1.1.0
 # Docker username
 USERNAME=reecerose
 
