@@ -1,6 +1,6 @@
 {
   "name": "server-ts-prisma",
-  "version": "0.1.0",
+  "version": "1.1.1",
   "type": "module",
   "scripts": {
     "dev": "ts-node-dev src/server.ts",

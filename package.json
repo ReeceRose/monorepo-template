@@ -1,6 +1,6 @@
 {
-  "name": "turborepo-basic-shared",
-  "version": "0.0.0",
+  "name": "monorepo-template",
+  "version": "1.1.1",
   "private": true,
   "workspaces": [
     "apps/*",
