@@ -1,18 +1,13 @@
 import { ITodo } from 'lib/types';
 
-import { TodoItem } from './Item';
+import { TodoItemProps } from 'lib/types/props/todo/';
 
 type Props = {
   data?: ITodo[];
-  toggleCompleted: (todo: ITodo) => Promise<void>;
-  deleteTodo: (id: string) => Promise<void>;
+  TodoItem: ({ data }: TodoItemProps) => JSX.Element;
 };
 
-export const TodoList = ({
-  data,
-  toggleCompleted,
-  deleteTodo,
-}: Props): JSX.Element => {
+export const TodoList = ({ data, TodoItem }: Props): JSX.Element => {
   return (
     <div className="flex flex-col">
       <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -41,12 +36,7 @@ export const TodoList = ({
               <tbody>
                 {data && data.length != 0 ? (
                   data?.map((todo: ITodo) => (
-                    <TodoItem
-                      key={todo.id}
-                      toggleCompleted={toggleCompleted}
-                      deleteTodo={deleteTodo}
-                      data={todo}
-                    />
+                    <TodoItem key={todo.id} data={todo} />
                   ))
                 ) : (
                   <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">

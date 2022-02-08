@@ -1,10 +1,7 @@
+import { NewTodoProps } from 'lib/types/props/todo';
 import { useState } from 'react';
 
-type Props = {
-  insertTodo: (description: string) => Promise<void>;
-};
-
-export const NewTodo = ({ insertTodo }: Props): JSX.Element => {
+export const NewTodo = ({ insertTodo }: NewTodoProps): JSX.Element => {
   const [description, setDescription] = useState('');
 
   return (

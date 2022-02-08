@@ -342,6 +342,7 @@ importers:
       eslint: ^8.8.0
       eslint-config-prettier: ^8.3.0
       eslint-plugin-prettier: ^4.0.0
+      tsconfig: workspace:*
       typescript: ^4.5.5
     devDependencies:
       '@types/node': 17.0.14
@@ -351,6 +352,7 @@ importers:
       eslint: 8.8.0
       eslint-config-prettier: 8.3.0_eslint@8.8.0
       eslint-plugin-prettier: 4.0.0_43197c8d12d1d439034cfcf65e1c48c2
+      tsconfig: link:../tsconfig
       typescript: 4.5.5
 
   packages/tsconfig:
