@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GenericNavbar component matches snapshot 1`] = `
+<DocumentFragment>
+  <nav
+    class="fixed top-0 z-50 flex flex-wrap items-center justify-between w-full px-2 py-3 bg-white shadow navbar-expand-lg"
+  >
+    <div
+      class="container flex flex-wrap items-center justify-between px-4 mx-auto"
+    >
+      <div
+        class="relative flex justify-between w-full lg:w-auto lg:static lg:block lg:justify-start"
+      >
+        <div
+          class="flex items-center text-2xl font-black text-gray-800 uppercase align-middle dark:text-white"
+        >
+          Client - GraphQL
+        </div>
+      </div>
+    </div>
+  </nav>
+</DocumentFragment>
+`;
