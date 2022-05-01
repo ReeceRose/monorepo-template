@@ -23,16 +23,16 @@
     "pnpm-context": "pnpm/pnpm-context.mjs"
   },
   "devDependencies": {
-    "@pnpm/filter-workspace-packages": "^4.4.22",
+    "@pnpm/filter-workspace-packages": "^5.0.3",
     "@pnpm/logger": "^4.0.0",
     "globby": "^13.1.1",
     "husky": "^7.0.4",
-    "lint-staged": "^12.3.7",
+    "lint-staged": "^12.4.1",
     "meow": "^10.1.2",
     "mississippi": "^4.0.0",
-    "prettier": "^2.6.0",
+    "prettier": "^2.6.2",
     "tar": "^6.1.11",
-    "turbo": "^1.1.6"
+    "turbo": "^1.2.6"
   },
   "engines": {
     "npm": ">=7.0.0",
