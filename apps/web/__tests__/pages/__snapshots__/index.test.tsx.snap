@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Index page matches snapshot 1`] = `
-<DocumentFragment>
-  <div />
-</DocumentFragment>
-`;
